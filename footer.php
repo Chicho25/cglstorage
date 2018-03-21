@@ -1,9 +1,9 @@
         <div class="footer">
             <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
+                <strong></strong>
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
+                <strong></strong> 
             </div>
         </div>
 
@@ -42,8 +42,8 @@
     <script>
 
         $(document).ready(function() {
-            
-            
+
+
             $.fn.oldChosen = $.fn.chosen
             $.fn.chosen = function(options) {
               var select = $(this)
@@ -68,7 +68,7 @@
               return ret
             }
             $('.chosen-select').chosen({width: "100%"});
-            
+
 
 
             $('.dataTables-example').DataTable({
@@ -147,12 +147,12 @@
             $('.dual_select').bootstrapDualListbox({
                 selectorMinimalHeight: 160
             });
-            
+
             $('.footable').footable();
             var elem = document.querySelector('.js-switch');
             var switchery = new Switchery(elem, { color: '#1AB394' });
 
-            
+
 
         });
         var geocoder;
@@ -183,7 +183,7 @@
             if (marker == undefined){
                 marker = new google.maps.Marker({
                     position: location,
-                    map: map, 
+                    map: map,
                     animation: google.maps.Animation.DROP,
                 });
             }
@@ -195,7 +195,7 @@
         }
 
         function setMarket() {
-          
+
           var address = document.getElementById("address1").value;
 
             geocoder.geocode({
@@ -210,7 +210,7 @@
                         map: map,
                         position: results[0].geometry.location
                     });
-                    
+
 
                 } else {
                     alert("Geocode was not successful for the following reason: " + status);

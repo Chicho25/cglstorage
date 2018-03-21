@@ -77,6 +77,7 @@
       <table width="100%">
         <tr>
         <td width="100%" align="center">
+          <img src="img/logo1.png" width="150" alt="">
         <h3>FACTURA</h3>
         </td>
         </tr>
