@@ -51,7 +51,7 @@
 
 ///////////////// agregado ///////////////////
 
-      $pricline = $_POST['precio'];
+      //$pricline = $_POST['precio'];
       $otherval = 0;
 
       $arrVal = array(
@@ -90,7 +90,7 @@
                         "receive_date" => date("Y-m-d h:i::s")
                        );
 
-          $nId2 = InsertRec("receipt", $arrVal2);
+          //$nId2 = InsertRec("receipt", $arrVal2);
 
               if(count($totaltopay) > 0)
               {
@@ -98,15 +98,17 @@
                         "id_receipt" => $nId2,
                         "amount" => $totaltopay
                        );
-                   InsertRec("receipt_detail", $arrVal);
+                   //InsertRec("receipt_detail", $arrVal);
               }
 
           //$id = $nId;
           //include("sendemail.php");
           $message = '<div class="alert alert-success">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  <strong>Quote created successfully</strong>
+                  <strong>Registro Exitoso</strong>
                 </div>';
+
+
       }
       else
       {
@@ -118,6 +120,34 @@
 
 
      }
+
+     if(isset($_POST['submitCustomers']))
+      {
+
+           $arrVal = array(
+                         "name" => $cname,
+                         "phone" => $phone,
+                         "cellno" => $phone,
+                         "email" => $email,
+                         "id_membership" => $membership,
+                         "id_user" => $_SESSION['USER_ID'],
+                         "id_company" => $_SESSION['USER_COMPANY'],
+                         "stat" => 1,
+                         "created_on" => date("Y-m-d h:i::s")
+                        );
+
+           $nId = InsertRec("customer", $arrVal);
+
+           if($nId > 0)
+           {
+
+               $message = '<div class="alert alert-success">
+                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                       <strong>Cliente Creado</strong>
+                     </div>';
+           }
+         }
+
 ?>
   <?php
       $arrCompany = GetRecord("package", "id = ".$_REQUEST['id']);
@@ -163,6 +193,11 @@
                                 }
                                     ?>
                                   </select>
+                              </div>
+                              <div class="col-sm-2 no-padding">
+                                <div class="col-sm-10">
+                                  <a data-toggle="modal" class="btn btn-primary" onclick="emptyLine()"  data-target="#myModal">Agregar Cliente</a>
+                                </div>
                               </div>
                           </div>
 
@@ -274,7 +309,7 @@
                             </div>
                           </div>
                           <div class="form-group required">
-                            <label class="col-lg-2 text-right control-label font-bold"><?php echo Package_Shipper?></label>
+                            <label class="col-lg-2 text-right control-label font-bold"><?php echo 'Cliente';?></label>
                             <div class="col-lg-3 ">
                                 <input type="text" class="form-control" required="" value="<?php echo $arrCompany['shipper']?>"  name="shipper" data-required="true">
                             </div>
@@ -294,6 +329,60 @@
                               </div>
                             </div>
                           </form>
+                          <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                              <div class="modal-dialog">
+                              <div class="modal-content animated bounceInRight">
+                                      <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                          <h4 class="modal-title"><?php echo Membership_AddLine?></h4>
+
+                                      </div>
+                                      <form class="form-horizontal" action="" method="post">
+                                      <div class="modal-body">
+                                          <div class="row">
+                                            <div class="form-group">
+                                              <label class="col-lg-3 text-right control-label">Nombre</label>
+                                              <div class="col-lg-7">
+                                                <input type="text" class="form-control"  name="cname" id="pricperpound"  data-required="true" autocomplete="off">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="col-lg-3 text-right control-label">Telefono</label>
+                                              <div class="col-lg-7">
+                                                <input type="text" class="form-control"  name="phone" id="initialrange"  data-required="true" autocomplete="off">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="col-lg-3 text-right control-label">Correo</label>
+                                              <div class="col-lg-7">
+                                                <input type="text" class="form-control" name="email" id="lastrange"  data-required="true" autocomplete="off">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="col-lg-3 text-right control-label">Membrecia</label>
+                                              <div class="col-lg-7">
+                                                <select class="chosen-select form-control" name="membership" id="customer" required="required">
+                                                  <option value="">---------</option>
+                                                  <?PHP
+                                                  $arrKindMeetings = GetRecords("Select * from membership where stat=1");
+                                                  foreach ($arrKindMeetings as $key => $value) { ?>
+                                                  <option value="<?php echo $value['id']; ?>"><?php echo $value['description'];?></option>
+                                                  <?php
+                                                  }
+                                                  ?>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                          <button type="submit" class="btn btn-primary" name="submitCustomers"><?php echo Button_Save_Changes?></button>
+                                      </div>
+                                    </form>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
                       </div>
             </div>
@@ -301,7 +390,11 @@
         </div>
 
     </div>
-
 <?php
   include("footer.php");
 ?>
+<?php
+if(isset($_POST['submitUser'])){
+sleep(4);
+header("Location: package.php");
+} ?>

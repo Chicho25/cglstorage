@@ -1,17 +1,17 @@
-<?php 
+<?php
 
     ob_start();
     $membershipclass="class='active'";
     $editMembershipclass="class='active'";
-    
-    include("include/config.php"); 
-    include("include/defs.php"); 
-    $loggdUType = current_user_type();
-    
-    echo $loggdUType;
-    include("header.php"); 
 
-    if(!isset($_SESSION['USER_ID'])) 
+    include("include/config.php");
+    include("include/defs.php");
+    $loggdUType = current_user_type();
+
+    echo $loggdUType;
+    include("header.php");
+
+    if(!isset($_SESSION['USER_ID']))
      {
           header("Location: index.php");
           exit;
@@ -19,7 +19,7 @@
      $message="";
 
     if(isset($_POST['submitUser']))
-     {       
+     {
           $pricline = $_POST['h1'];
           $stval = (isset($_POST['status'])) ? 1 : 0;
           $arrVal = array(
@@ -28,10 +28,10 @@
                         "stat" => $stval
                        );
 
-          
-            
-          UpdateRec("membership", "id=".$_REQUEST['id'], $arrVal); 
-          $nId=$_REQUEST['id'];   
+
+
+          UpdateRec("membership", "id=".$_REQUEST['id'], $arrVal);
+          $nId=$_REQUEST['id'];
           if($nId > 0)
           {
               if(count($pricline) > 0)
@@ -46,7 +46,7 @@
                         "initial_range" => $expVal[1],
                         "last_range" => $expVal[2]
                        );
-                  InsertRec("membership_price", $arrVal);  
+                  InsertRec("membership_price", $arrVal);
                 }
               }
               $message = '<div class="alert alert-success">
@@ -54,12 +54,12 @@
                       <strong>Membership updated successfully</strong>
                     </div>';
           }
-        
-          
-        
+
+
+
      }
 ?>
-  <?php 
+  <?php
       if(RecCount("membership", "id_user = ".$_SESSION['USER_ID']." and id_company = ".$_SESSION['USER_COMPANY']." and id = ".$_REQUEST['id']) == 0)
       {
         header("location:membership.php");
@@ -80,31 +80,31 @@
                     <div class="ibox-content">
                       <form class="form-horizontal" data-validate="parsley" id="frmEmployee" method="post"   enctype="multipart/form-data">
                         <input type="hidden" value="<?php echo $arrMembership['id']?>" name="id">
-                        
-                          <?php 
+
+                          <?php
                                 if($message !="")
                                     echo $message;
-                          ?> 
+                          ?>
                           <div class="form-group required">
                             <label class="col-lg-4 text-right control-label font-bold"><?php echo Membership_Name?></label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" required="" value="<?php echo $arrMembership['name']?>" placeholder="<?php echo Membership_Name?>" name="cname" data-required="true">                        
-                            </div>  
+                              <input type="text" class="form-control" required="" value="<?php echo $arrMembership['name']?>" placeholder="<?php echo Membership_Name?>" name="cname" data-required="true">
+                            </div>
                           </div>
                           <div class="form-group required">
                             <label class="col-lg-4 text-right control-label font-bold"><?php echo Membership_Description?></label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" required="" value="<?php echo $arrMembership['description']?>" placeholder="<?php echo Membership_Description?>" name="description" data-required="true">                        
-                            </div>  
+                              <input type="text" class="form-control" required="" value="<?php echo $arrMembership['description']?>" placeholder="<?php echo Membership_Description?>" name="description" data-required="true">
+                            </div>
                           </div>
                           <div class="form-group required">
                             <label class="col-lg-4 font-bold control-label"><?php echo Active_Deactive?></label>
                             <div class="col-lg-4">
                                 <input type="checkbox" class="js-switch" name="status" <?php echo $status?>>
-                                
+
                             </div>
 
-                          </div> 
+                          </div>
                           <div class="form-group">
                             <label class="col-lg-4 text-right control-label font-bold"></label>
                             <div class="col-lg-4">
@@ -116,7 +116,7 @@
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
                                             <h4 class="modal-title"><?php echo Membership_AddLine?></h4>
-                                            
+
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
@@ -124,19 +124,19 @@
                                                 <label class="col-lg-3 text-right control-label"><?php echo Price_Per_Pound?></label>
                                                 <div class="col-lg-7">
                                                   <input type="text" class="form-control"  name="pricperpound" id="pricperpound"  data-required="true" >
-                                                </div>  
+                                                </div>
                                               </div>
                                               <div class="form-group">
                                                 <label class="col-lg-3 text-right control-label"><?php echo Initial_Range?></label>
                                                 <div class="col-lg-7">
                                                   <input type="text" class="form-control"  name="initialrange" id="initialrange"  data-required="true" >
-                                                </div>  
+                                                </div>
                                               </div>
                                               <div class="form-group">
                                                 <label class="col-lg-3 text-right control-label"><?php echo Last_Range?></label>
                                                 <div class="col-lg-7">
                                                   <input type="text" class="form-control" name="lastrange" id="lastrange"  data-required="true" >
-                                                </div>  
+                                                </div>
                                               </div>
                                             </div>
                                         </div>
@@ -159,13 +159,13 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <?php 
+                                <?php
                                 $arrOppDetail = GetRecords("select * from membership_price
                                                              where id_membership = ".$arrMembership['id']);
                                 foreach ($arrOppDetail as $key => $value) {
                                   $hdata = $value['perpund_price']."::::".$value['initial_range']."::::".$value['last_range'];
                                 ?>
-                                    
+
                                     <tr>
                                       <input type='hidden' name='h1[]' value='<?php echo $hdata?>'>
                                       <td><?php echo number_format($value['perpund_price'], 2)?></td>
@@ -185,16 +185,16 @@
                                 <button class="btn btn-white" type="button" onclick="window.location='home.php'"><?php echo Button_Cancel?></button>
                             </div>
                           </div>
-                    
+
                       </form>
                         </div>
                       </div>      
             </div>
-            
-        </div>    
+
+        </div>
 
     </div>
-    
-<?php    
-  include("footer.php"); 
-?> 
+
+<?php
+  include("footer.php");
+?>

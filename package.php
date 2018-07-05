@@ -67,7 +67,7 @@
                           </div>
                           <div class="col-sm-2 m-b-xs ph0 pull-right" >
                             <div class="input-group">
-                              <input type="text" class="input-s input-sm form-control" value="<?php echo $name?>" name="cname">
+                              <input type="text" class="input-s input-sm form-control" value="<?php echo $name?>" name="cname" id="trakin">
                             </div>
                           </div>
                           <div class="col-sm-3 m-b-xs ph0 pull-right" >
@@ -145,6 +145,8 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    document.getElementById("trakin").focus();
   </script>
 <?php
   include("footer.php");

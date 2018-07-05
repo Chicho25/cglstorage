@@ -1,15 +1,15 @@
-<?php 
+<?php
     ob_start();
     $quoteclass="class='active'";
     $editQuoteclass="class='active'";
-    
-    include("include/config.php"); 
-    include("include/defs.php"); 
-    $loggdUType = current_user_type();
-    
-    include("header.php"); 
 
-    if(!isset($_SESSION['USER_ID'])) 
+    include("include/config.php");
+    include("include/defs.php");
+    $loggdUType = current_user_type();
+
+    include("header.php");
+
+    if(!isset($_SESSION['USER_ID']))
      {
           header("Location: index.php");
           exit;
@@ -34,6 +34,9 @@
         $where.=" and  quote.stat =  1";
         $status = 1;
       }
+      if (isset($_POST['customer']) && $_POST['customer'] != '') {
+         $where .= " and quote.id_customer =".$_POST['customer'];
+      }
       $arrUser = GetRecords("SELECT quote.othervalue, quote.stat, quote.id, quote.date, customer.name as CName, sum(quote_detail.price) as total
                             from quote
                             inner join quote_detail on quote_detail.id_quote = quote.id
@@ -41,9 +44,9 @@
                               $where
                               group by quote_detail.id_quote
                              ");
-     
+
 ?>
-     <?php 
+     <?php
       $bcName = Quote_List;
       include("breadcrumb.php") ;
     ?>
@@ -65,12 +68,25 @@
                           <div class="col-sm-3 m-b-xs pull-right">
                             <div class="input-group">
                               <span class="input-group-btn padder "><button class="btn btn-success btn-rounded"><?php echo Search?></button></span>
-                            </div>  
-                          </div>
-                          <div class="col-sm-2 m-b-xs ph0 pull-right" >
-                            <div class="input-group">
-                              <input type="text" class="input-s input-sm form-control" value="<?php echo $name?>" name="cname">
                             </div>
+                          </div>
+                          <div class="col-lg-3">
+                              <select class="chosen-select form-control" name="customer">
+                                <option value="">---------</option>
+                                <?PHP
+                                $arrKindMeetings = GetRecords("Select * from customer where stat=1");
+                                foreach ($arrKindMeetings as $key => $value) {
+                                  $kinId = $value['id'];
+                                  if($value['membernumber'] != "")
+                                    $kinDesc = $value['name']."-".$value['membernumber'];
+                                  else
+                                    $kinDesc = $value['name'];
+                                ?>
+                                <option value="<?php echo $value['id']?>"><?php echo $kinDesc?></option>
+                                <?php
+                            }
+                                ?>
+                              </select>
                           </div>
                           <div class="col-sm-3 m-b-xs ph0 pull-right" >
                             <div class="input-group">
@@ -79,7 +95,7 @@
                               <input type="radio" name="status" value="0" <?php echo $c=(isset($status) && $status == 0) ? 'checked' : ''?> > <?php echo Archived?>
                             </div>
                           </div>
-                          
+
                         </div>
                       </form>
                         <div class="table-responsive">
@@ -95,45 +111,55 @@
                                 </tr>
                               </thead>
                               <tbody>
-                              <?PHP  
+                              <?PHP
                                 $i=1;
+                                $suma_total = 0;
                                 foreach ($arrUser as $key => $value) {
-                                  
+
                                   $status = ($value['stat'] == 1) ? 'Active'  : (($value['stat'] == 2 ) ? 'Invoiced' : 'In Active');
-                                ?> 
-                              <tr> 
+                                ?>
+                              <tr>
                                   <td class="tbdata"> <?php echo $value['id']?> </td>
                                   <td class="tbdata"> <?php echo $value['CName']?> </td>
                                   <td class="tbdata"> <?php echo $value['date']?> </td>
-                                  <td class="tbdata"> <?php echo round($value['total'] + $value['othervalue'] , 2)?> </td>
+                                  <td class="tbdata"> <?php echo round($value['total'] + $value['othervalue'] , 2)?> $</td>
                                   <td class="tbdata"> <?php echo $status?> </td>
-                                  <td> 
+                                  <td>
                                     <?php if($value['stat'] != 2) : ?>
-                                    <button type="button" onclick="window.location='edit-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_Edit?></button> 
-                                  
+                                    <button type="button" onclick="window.location='edit-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_Edit?></button>
+
                                     <?php endif; ?>
                                     <?php if($value['stat'] == 2) : ?>
-                                      <button type="button" onclick="window.location='view-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_View?></button> 
-                                  
+                                      <button type="button" onclick="window.location='view-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_View?></button>
+
                                     <?php endif; ?>
                                   <a href='print-quote.php?id=<?php echo $value['id']?>' target="_blank" class="btn green btn-info"><?php echo Button_Print?></a>
-                                  <a href='pdf_factura.php?id=<?php echo $value['id']?>' target="_blank" class="btn green btn-info"><?php echo 'Ver';?></a> 
+                                  <a href='pdf_factura.php?id=<?php echo $value['id']?>' target="_blank" class="btn green btn-info"><?php echo 'Ver';?></a>
                                   <?php if($value['stat'] != 2) : ?>
-                                  <button type="button" onclick="window.location='change-quote-status.php?id=<?php echo $value['id']?>';" class="btn green btn-warning"><?php echo Button_Invoice?></button> 
+                                  <button type="button" onclick="window.location='change-quote-status.php?id=<?php echo $value['id']?>';" class="btn green btn-warning"><?php echo Button_Invoice?></button>
                                 <?php endif; ?>
                                   </td>
                               </tr>
                               <?php
+                                $suma_total += round($value['total'] + $value['othervalue'] , 2);
                                 $i++;
                               }
                               ?>
+                              <tr>
+                                  <td  colspan="3" class="tbdata" style="text-align:right;"> <b>Total: </b> </td>
+                                  <td class="tbdata"> <?php echo $suma_total; ?> $</td>
+                                  <td class="tbdata">  </td>
+                                  <td>
+
+                                  </td>
+                              </tr>
                               </tbody>
                             </table>
                         </div>
                   </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
     <script type="text/javascript">
     function readURL(input) {
@@ -149,6 +175,6 @@
         }
     }
   </script>
-<?php    
-  include("footer.php"); 
+<?php
+  include("footer.php");
 ?>

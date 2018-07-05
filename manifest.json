@@ -1,0 +1,41 @@
+{
+  "name": "Ramen",
+  "short_name": "Ramen",
+  "icons": [
+    {
+      "src": "img/icons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/icons/180.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "img/icons/256.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "img/icons/256.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://ofertadeviaje.com/shl_app/login.php",
+  "display": "standalone",
+  "background_color": "#fdce0e",
+  "theme_color": "#20449c",
+  "description": "APP Grúas SHL"
+}
