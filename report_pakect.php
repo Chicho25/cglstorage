@@ -25,8 +25,13 @@
 
 
       //$where.=" and  quote.stat =  2";
-      $whreQte = "";
       $whreRcpt = "";
+
+      if (isset($stat) && $stat != '') {
+        $whreQte.= " and package.stat = '".$stat."'";
+      }
+
+
       if(isset($datefrom) && $datefrom != "")
       {
         $whreQte.= " and quote.date >= '".$datefrom."'";
@@ -42,6 +47,12 @@
       else
         $crtDatTo = date("Y-m-d");
 
+
+        if($customer != "" )
+        {
+          $whreQte.= " and customer.id = '".$customer."'";
+        }
+
       $arrUser = GetRecords("select
                               quote.date as fecha,
                               quote.othervalue,
@@ -50,7 +61,8 @@
                               quote_detail.price,
                               package.trackingno as codigo,
                               package.totaltopay as total_pagar,
-                              (quote.othervalue + quote_detail.price) as total_cobrar
+                              (quote.othervalue + quote_detail.price) as total_cobrar,
+                              package.stat
                               from quote inner join customer on quote.id_customer = customer.id
                               		       inner join quote_detail on quote_detail.id_quote = quote.id
                                          inner join package on package.id = quote_detail.id_package
@@ -73,35 +85,36 @@
                         <div class="row wrapper ">
                           <div class="col-sm-2 " id="data_1">
                             <div class="input-group date">
-                                <input type="text" required="" class="form-control" name="datefrom" id="datefrom" value="<?php if(isset($crtDatFrom)){ echo $crtDatFrom;} ?>">
+                                <input type="text" autocomplete="off" class="form-control" name="datefrom" id="datefrom" value="<?php if(isset($crtDatFrom)){ echo $crtDatFrom;} ?>">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                           </div>
                           <div class="col-sm-2 " id="data_2">
                             <div class="input-group date">
-                                <input type="text" required="" class="form-control" name="dateto" id="dateto" value="<?php if($crtDatTo){ echo $crtDatTo;} ?>">
+                                <input type="text" autocomplete="off" class="form-control" name="dateto" id="dateto" value="<?php if($crtDatTo){ echo $crtDatTo;} ?>">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                           </div>
-                          <div class="col-sm-2 m-b-xs ph0" >
-                            <?php /* ?><select class="chosen-select form-control" name="customer" id="customer">
+                          <div class="col-sm-2 m-b-xs ph0">
+                            <select class="chosen-select form-control" name="stat" id="customer">
+                                <option value="">Status</option>
+                                <option value="3" <?php if (isset($stat) && $stat == 3){ echo "selected";} ?>>Cobrado</option>
+                                <option value="2" <?php if (isset($stat) && $stat == 2){ echo "selected";} ?>>No Cobrado</option>
+                            </select>
+                          </div>
+                          <div class="col-sm-2" >
+                            <select class="chosen-select form-control" name="customer" id="customer">
                                     <option value="">-----------</option>
                                     <?PHP
-                                    $where = ($loggdUType != 'Master') ? " and id_user = ".$_SESSION['USER_ID']." and id_company = ".$_SESSION['USER_COMPANY'] : '';
-                                    $arrKindMeetings = GetRecords("Select * from customer where stat=1 $where");
+                                    $arrKindMeetings = GetRecords("Select * from customer where stat=1");
                                     foreach ($arrKindMeetings as $key => $value) {
                                       $kinId = $value['id'];
-                                      if($value['membernumber'] != "")
-                                        $kinDesc = $value['membernumber']."-".$value['name'];
-                                      else
-                                        $kinDesc = $value['name'];
+                                      $kinDesc = $value['name'];
                                       $selRoll = (isset($customer) && $customer == $kinId) ? 'selected' : '';
                                     ?>
                                     <option value="<?php echo $kinId?>" <?php echo $selRoll?>><?php echo $kinDesc?></option>
-                                    <?php
-                                }
-                                    ?>
-                                  </select><?php */ ?>
+                                    <?php } ?>
+                            </select>
                           </div>
                           <!-- <div class="col-sm-2 m-b-xs" >
                             <div class="input-group">
@@ -122,6 +135,7 @@
                                   <th><?php echo Statement_Date?></th>
                                   <th>Codigo</th>
                                   <th>Cliente</th>
+                                  <th>Status</th>
                                   <th>Costo de compra</th>
                                   <th>Costo de venta</th>
                                   <th>Ganancia</th>
@@ -146,6 +160,7 @@
                                 <td class="tbdata"> <?php echo $value['fecha']?> </td>
                                 <td class="tbdata"> <?php echo $value['codigo']?> </td>
                                 <td class="tbdata"> <?php echo $value['nombre_cliente']?> </td>
+                                <td class="tbdata"> <?php if ($value['stat']==2){ echo 'No cobrado'; }elseif($value['stat']==3){ echo 'Cobrado';}else{} ?> </td>
                                 <td class="tbdata"> <?php echo number_format($value['total_pagar'],2)?> </td>
                                 <td class="tbdata"> <?php echo number_format($value['total_cobrar'],2)?> </td>
                                 <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['total_pagar'],2)?> </td>
@@ -157,7 +172,7 @@
                               ?>
                               </tbody>
                               <tr>
-                                  <td class="tbdata" colspan="3"> <b>Totales</b> </td>
+                                  <td class="tbdata" colspan="4"> <b>Totales</b> </td>
                                   <td class="tbdata"><b> <?php echo number_format($pagar,2)?></b> </td>
                                   <td class="tbdata"><b> <?php echo number_format($cobrar,2)?> </b></td>
                                   <td class="tbdata"><b> <?php echo number_format($cobrar-$pagar,2)?> </b></td>

@@ -58,11 +58,16 @@
                         <h5><?php echo Quote_List?></h5>
                     </div>
                     <div class="ibox-content">
-                      <form method="post">
+                      <form method="post" method="post" action="update_selecction_pay.php">
                         <div class="row wrapper ">
-                          <div class="col-sm-3 pull-left">
+                          <div class="col-sm-2 pull-left">
                             <span class="input-group-btn padder ">
                               <button type="button" class="btn btn-success btn-rounded" onclick="window.location='register-quote.php'"?><?php echo Quote_Add?></button>
+                            </span>
+                          </div>
+                          <div class="col-sm-2 pull-left">
+                            <span class="input-group-btn padder ">
+                              <button type="submit" class="btn btn-success btn-rounded" name="pay_selection"><?php echo 'Pagar Seleccion';?></button>
                             </span>
                           </div>
                           <div class="col-sm-3 m-b-xs pull-right">
@@ -97,11 +102,12 @@
                           </div>
 
                         </div>
-                      </form>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover dataTables-example">
                               <thead>
                                 <tr>
+                                  <th><?php echo 'Check';?></th>
                                   <th><?php echo Quote_Id?></th>
                                   <th><?php echo Quote_Customer_Name?></th>
                                   <th><?php echo Quote_Date?></th>
@@ -119,6 +125,7 @@
                                   $status = ($value['stat'] == 1) ? 'Active'  : (($value['stat'] == 2 ) ? 'Invoiced' : 'In Active');
                                 ?>
                               <tr>
+                                  <td class="tbdata"> <input type="checkbox" name="fact[]" value="<?php echo $value['id']?>" style="width:80px;"> </td>
                                   <td class="tbdata"> <?php echo $value['id']?> </td>
                                   <td class="tbdata"> <?php echo $value['CName']?> </td>
                                   <td class="tbdata"> <?php echo $value['date']?> </td>
@@ -155,6 +162,7 @@
                               </tr>
                               </tbody>
                             </table>
+                          </form>
                         </div>
                   </div>
                 </div>

@@ -103,6 +103,11 @@
                             <?php echo Import_Package?>
                           </a>
                         </li>
+                        <li <?php if(isset($listimportPackageclass)) echo $listimportPackageclass;?>>
+                          <a href="list-import-package.php">
+                            <?php echo 'Lista Importacion';?>
+                          </a>
+                        </li>
                         <li <?php if(isset($groupPackageEmailclass)) echo $groupPackageEmailclass;?>>
                           <a href="group-package-email.php">
                             <?php echo Send_Packages_Email?>
@@ -153,11 +158,13 @@
                             <?php echo Statement_Account?>
                           </a>
                         </li>
+                        <?php /* ?>
                         <li <?php if(isset($statementTAccclass)) echo $statementTAccclass;?>>
                           <a href="report_pakect.php">
                             <?php echo 'Reporte Paquetes';?>
                           </a>
                         </li>
+                        <?php */ ?>
                     </ul>
                 </li>
 

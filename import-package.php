@@ -1,17 +1,17 @@
-<?php 
+<?php
 
     ob_start();
     $packageclass="class='active'";
     $importPackageclass="class='active'";
-    
-    include("include/config.php"); 
-    include("include/defs.php"); 
-    $loggdUType = current_user_type();
-    
-    
-    include("header.php"); 
 
-    if(!isset($_SESSION['USER_ID'])) 
+    include("include/config.php");
+    include("include/defs.php");
+    $loggdUType = current_user_type();
+
+
+    include("header.php");
+
+    if(!isset($_SESSION['USER_ID']))
      {
           header("Location: index.php");
           exit;
@@ -22,10 +22,18 @@
 
     $message="";
      $dataImported=array();
-     
+
      if(isset($_FILES['myFile']) && $_FILES['myFile']['tmp_name'] != "")
      {
         $pathInfo = pathInfo($_FILES['myFile']['name']);
+
+        $import_cvs = array("name" => $_FILES['myFile']['tmp_name'],
+                            "date" => date("Y-m-d"),
+                            "stat" => 1,
+                            "id_user" => $_SESSION['USER_ID']);
+
+        $ID_IMPORT = InsertRec("importacion_cvs", $import_cvs);
+
         if($pathInfo['extension'] == "csv")
         {
           $tmpName = $_FILES['myFile']['tmp_name'];
@@ -34,7 +42,7 @@
           {
             $i=1;
               foreach ($csvAsArray as $key => $value) {
-                
+
                 if($i == 1)
                   {
                     $i = 2;
@@ -45,27 +53,28 @@
                         "widthlb" => $value[1],
                         "length" => $value[2],
                         "height" => $value[3],
-                        "width" => $value[4],                        
+                        "width" => $value[4],
                         "volume" => $value[5],
-                        "totaltopay" => $value[6],                  
+                        "totaltopay" => $value[6],
                         "id_user" => $_SESSION['USER_ID'],
                         "id_company" => $_SESSION['USER_COMPANY'],
                         "stat" => 1,
-                        "created_on" => date("Y-m-d")
+                        "created_on" => date("Y-m-d"),
+                        "id_import_cvs" => $ID_IMPORT
                        );
 
-                    
-                $NID = InsertRec("package", $arrVal); 
 
-                  
+                $NID = InsertRec("package", $arrVal);
+
+
                   if($NID > 0)
                   {
                     $value['ID'] = $NID;
                     $dataImported[] = $value;
                   }
-                  
+
               }
-              
+
           }
 
         }
@@ -79,7 +88,7 @@
 
      }
 ?>
-  <?php 
+  <?php
       $bcName = Import_Package;
       include("breadcrumb.php") ;
     ?>
@@ -91,11 +100,11 @@
                         <h5><?php echo Import_Package?></h5>
                     </div>
                     <div class="ibox-content">
-                      <form class="form-horizontal" role="form" method="post"  enctype="multipart/form-data">  
-                                <?php 
+                      <form class="form-horizontal" role="form" method="post"  enctype="multipart/form-data">
+                                <?php
                                 if($message !="")
                                     echo $message;
-                          ?> 
+                          ?>
                                     <div class="form-body">
                                         <h3 class="form-section"><?php echo Package_Import_CSV?></h3>
                                         <div class="row">
@@ -113,7 +122,7 @@
                                                               <input type="file" name="myFile"/>
                                                           </span>
                                                           <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput"><?php echo Button_Remove?></a>
-                                                      </div> 
+                                                      </div>
                                                    </div>
                                                    <div class="col-sm-3 col-md-3 ph-sm pb-sm">
                                                       <button  class="btn btn-primary"><?php echo Button_Import?></button>
@@ -125,7 +134,7 @@
                                         <!--/row-->
                                     </div>
 
-                                </form> 
+                                </form>
 
                                 <?php if(count($dataImported) > 0) { ?>
                                 <table class="table table-striped table-bordered table-hover" id="tblform">
@@ -139,16 +148,16 @@
                                                   <th><?php echo Package_Volume?></th>
                                                   <th><?php echo Package_Total_To_Pay?></th>
 
-                                                  
+
                                               </tr>
                                           </thead>
                                           <tbody>
                                               <?php
-                                                
+
                                                 foreach ($dataImported as $key => $value) {
-                                                  
-                                                ?> 
-                                              <tr> 
+
+                                                ?>
+                                              <tr>
                                                   <td class="tbdata"> <?php echo $value[0]?> </td>
                                                   <td class="tbdata"> <?php echo $value[1]?> </td>
                                                   <td class="tbdata"> <?php echo $value[2]?> </td>
@@ -156,22 +165,22 @@
                                                   <td class="tbdata"> <?php echo $value[4]?> </td>
                                                   <td class="tbdata"> <?php echo $value[5]?> </td>
                                                   <td class="tbdata"> <?php echo $value[6]?> </td>
-                                                  
+
                                               </tr>
                                               <?php
                                               }
                                               ?>
                                           </tbody>
                                       </table>
-                                   <?php } ?> 
+                                   <?php } ?>
                         </div>
-                      </div>      
+                      </div>
             </div>
-            
-        </div>    
+
+        </div>
 
     </div>
-    
-<?php    
-  include("footer.php"); 
-?> 
+
+<?php
+  include("footer.php");
+?>

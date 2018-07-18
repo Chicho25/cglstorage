@@ -29,7 +29,7 @@
                         "widthlb" => $widthlb,
                         "weighttocollect" => ceil($weighttocollect),
                         "custompricerate" => $custompricerate,
-                        "totaltopay" => $totaltopay,
+                        "total_to_pay_customers" => $totaltopay,
                         "trackingno" => $trackingno,
                         "shipper" => $shipper,
                         "id_customer" => $customer,
@@ -45,7 +45,7 @@
 
               $message = '<div class="alert alert-success">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      <strong>Package updated successfully</strong>
+                      <strong>Paquete actualizado con exito</strong>
                     </div>';
           }
 
@@ -288,16 +288,25 @@
                               <div class="col-lg-10">
                                 <input type="text" class="form-control" readonly="" required="" value="<?php echo $arrCompany['custompricerate']?>"  name="custompricerate" id="custompricerate" data-required="true">
                               </div>
-                              <div class="col-lg-2 no-padding">
+                              <div class="col-lg-1 no-padding">
                                 <span class="font-bold">$ × LB</span>
                               </div>
                             </div>
-                            <label class="col-lg-2 text-right control-label font-bold"><?php echo Package_Total_To_Pay?></label>
-                            <div class="col-lg-3 no-padding">
+                            <label class="col-lg-1 text-right control-label font-bold"><?php echo Package_Total_To_Pay?></label>
+                            <div class="col-lg-2 no-padding">
                               <div class="col-lg-10">
-                                <input type="text" class="form-control" readonly="" required="" value="<?php echo $arrCompany['totaltopay']?>"  name="totaltopay" id="totaltopay" data-required="true">
+                                <input type="text" class="form-control" readonly="" required="" value="<?php echo $arrCompany['totaltopay']?>"  name="totaltopay" data-required="true">
                               </div>
-                              <div class="col-lg-2 no-padding">
+                              <div class="col-lg-1 no-padding">
+                                <span class="font-bold">$</span>
+                              </div>
+                            </div>
+                            <label class="col-lg-1 text-right control-label font-bold"><?php echo 'Total a pagar cliente';?></label>
+                            <div class="col-lg-2 no-padding">
+                              <div class="col-lg-10">
+                                <input type="text" class="form-control" readonly="" required="" value="<?php echo $arrCompany['total_to_pay_customers']?>"  name="totaltopay" id="totaltopay" data-required="true">
+                              </div>
+                              <div class="col-lg-1 no-padding">
                                 <span class="font-bold">$</span>
                               </div>
                             </div>
