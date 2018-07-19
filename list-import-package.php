@@ -32,7 +32,8 @@
       $crtDatTo = date("Y-m-d");
 
 
-      $arrUser = GetRecords("SELECT *, (select count(*) from package where id_import_cvs = importacion_cvs.id) as contar
+      $arrUser = GetRecords("SELECT *, (select count(*) from package where id_import_cvs = importacion_cvs.id) as contar,
+                                       (select sum(totaltopay) from package where id_import_cvs = importacion_cvs.id) as suma
                               FROM  importacion_cvs
                               $where
                              ");
@@ -81,11 +82,16 @@
                                   <th>Nombre</th>
                                   <th>Fecha</th>
                                   <th>Cantidad</th>
+                                  <th>Total a pagar</th>
+                                  <th>Status</th>
+                                  <th>Ver Paquetes</th>
+                                  <th>Pagar</th>
                                 </tr>
                               </thead>
                               <tbody>
                               <?PHP
                                 $i=1;
+                                $total_deuda = 0;
                                 foreach ($arrUser as $key => $value) {
                                 ?>
                               <tr>
@@ -93,11 +99,20 @@
                                   <td class="tbdata"> <?php echo $value['name']?> </td>
                                   <td class="tbdata"> <?php echo $value['date']?> </td>
                                   <td class="tbdata"> <?php echo $value['contar']?> </td>
+                                  <td class="tbdata"> <?php echo number_format($value['suma'], 2);?> </td>
+                                  <td class="tbdata"> <?php if ($value['stat']==1){ echo 'Pendiente por pagar'; }else{ echo 'Pagado'; } ?> </td>
+                                  <td class="tbdata"><a href="list-import-package-list.php?id_import_cvs=<?php echo $value['id']?>" class="btn btn-success btn-rounded"><?php echo 'Ver';?></a></td>
+                                  <td class="tbdata"><button class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button></td>
                               </tr>
                               <?php
                                 $i++;
+                                $total_deuda += $value['suma'];
                               }
                               ?>
+                              <tr>
+                                <td colspan="4" style="text-align:right;">Total a Pagar</td>
+                                <td><?php echo number_format($total_deuda, 2); ?></td>
+                              </tr>
                               </tbody>
                             </table>
                         </div>

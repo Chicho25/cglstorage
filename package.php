@@ -17,7 +17,7 @@
     $where = "where (1=1)";
     $company = "";
     if($loggdUType != 'Master')
-      $where.=" and package.id_user = ".$_SESSION['USER_ID']." and package.id_company = ".$_SESSION['USER_COMPANY'];
+      //$where.=" and package.id_user = ".$_SESSION['USER_ID']." and package.id_company = ".$_SESSION['USER_COMPANY'];
       $name = "";
       if(isset($_POST['cname']) && $_POST['cname'] != "")
       {
@@ -31,7 +31,7 @@
       }
       else
       {
-        $where.=" and  package.stat =  1";
+        $where.=" and package.stat = 1";
         $status = 1;
       }
       $arrUser = GetRecords("SELECT package.*, customer.name as CName
@@ -77,7 +77,6 @@
                               <input type="radio" name="status" value="0" <?php echo $c=(isset($status) && $status == 0) ? 'checked' : ''?> > <?php echo Archived?>
                             </div>
                           </div>
-
                         </div>
                       </form>
                         <div class="table-responsive">
@@ -87,7 +86,7 @@
                                   <th><?php echo Package_Id?></th>
                                   <th><?php echo Package_Customer_Name?></th>
                                   <th><?php echo Package_Tracking_number?></th>
-                                  <th><?php echo Package_Shipper?></th>
+                                  <th><?php echo 'Sub Cliente'?></th>
                                   <th><?php echo Package_Date?></th>
                                   <th><?php echo Status?></th>
                                   <th><?php echo Action?></th>

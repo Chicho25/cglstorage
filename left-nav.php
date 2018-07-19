@@ -152,19 +152,19 @@
                 <li  <?php if(isset($reportclass)) echo $reportclass;?>>
                     <a href="#"><i class="fa fa-bar-chart-o"></i><span class="nav-label"><?php echo Report?></span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-
+                      <?php /* ?>
                         <li <?php if(isset($statementAccclass)) echo $statementAccclass;?>>
                           <a href="statement-account-rep.php">
                             <?php echo Statement_Account?>
                           </a>
                         </li>
-                        <?php /* ?>
+                        <?php */ ?>
                         <li <?php if(isset($statementTAccclass)) echo $statementTAccclass;?>>
                           <a href="report_pakect.php">
                             <?php echo 'Reporte Paquetes';?>
                           </a>
                         </li>
-                        <?php */ ?>
+
                     </ul>
                 </li>
 
