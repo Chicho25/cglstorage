@@ -2598,3 +2598,421 @@
 [02-Feb-2018 18:06:35 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
 [02-Feb-2018 18:06:35 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
 [02-Feb-2018 18:06:35 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:26 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[31-May-2018 15:11:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:26 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 4882
+[31-May-2018 15:11:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[31-May-2018 15:11:49 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:49 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:49 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:11:49 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:12:01 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[31-May-2018 15:12:01 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:12:01 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:12:01 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:12:01 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:13:19 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[31-May-2018 15:13:19 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:13:19 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:13:19 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[31-May-2018 15:13:19 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:37:04 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[13-Jun-2018 19:37:04 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:37:04 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:37:04 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:37:04 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:40:55 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[13-Jun-2018 19:40:55 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:40:55 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:40:55 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 19:40:55 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:56:36 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[13-Jun-2018 20:56:36 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:56:36 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:56:36 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:56:36 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:59:10 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[13-Jun-2018 20:59:10 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:59:10 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:59:10 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[13-Jun-2018 20:59:10 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:30:13 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:30:13 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:30:13 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:30:13 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:30:13 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:37:22 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:37:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:37:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:37:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:37:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:39:06 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:39:06 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:39:06 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:39:06 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:39:06 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:47:33 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:47:33 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:47:33 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:47:33 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:47:33 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:48:34 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:48:34 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:48:34 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:48:34 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:48:34 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:22 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:50:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:34 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:50:34 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:34 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:34 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:50:34 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:51:48 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:51:48 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:51:48 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:51:48 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:51:48 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:53:24 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:53:24 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:53:24 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:53:24 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:53:24 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:54:26 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:54:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:54:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:54:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:54:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:55:31 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:55:31 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:55:31 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:55:31 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:55:31 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:57:54 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:57:54 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:57:54 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:57:54 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:57:54 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:59:25 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 15:59:25 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:59:25 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:59:25 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 15:59:25 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:00:26 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:00:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:00:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:00:26 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:00:26 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:01:22 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:01:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:01:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:01:22 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:01:22 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:02:44 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:02:44 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:02:44 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:02:44 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:02:44 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:05 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:03:05 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:05 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:05 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:05 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:51 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:03:51 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:51 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:51 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:03:51 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:00 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:28:00 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:00 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:00 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:00 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:00 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 4882
+[27-Jun-2018 16:28:05 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:28:05 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:05 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:05 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:05 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:37 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:28:37 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:37 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:37 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:37 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:37 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 4882
+[27-Jun-2018 16:28:43 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:28:43 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:43 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:43 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:28:43 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:29:14 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[27-Jun-2018 16:29:14 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:29:14 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:29:14 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[27-Jun-2018 16:29:14 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 19:53:13 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[17-Jul-2018 19:53:13 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 19:53:13 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 19:53:13 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 19:53:13 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:07 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[17-Jul-2018 20:34:07 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:07 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:07 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:07 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:10 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[17-Jul-2018 20:34:10 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:10 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:10 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:10 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:24 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[17-Jul-2018 20:34:24 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:24 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:24 UTC] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[17-Jul-2018 20:34:24 UTC] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:45 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:37:45 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:45 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:45 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:45 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:48 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:37:48 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:48 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:48 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:37:48 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:09 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:39:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:39 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:39:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:39:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:20 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:40:20 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:20 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:20 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:20 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:44 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:40:44 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:44 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:44 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:40:44 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:41:39 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Jul-2018 11:41:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:41:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:41:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Jul-2018 11:41:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:35:01 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:35:01 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:35:01 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:35:01 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:35:01 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:36:00 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:36:00 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:36:00 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:36:00 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:36:00 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:37:09 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:37:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:37:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:37:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:37:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:12 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:59:12 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:12 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:12 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:12 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:19 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:59:19 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:19 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:19 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:19 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:58 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 10:59:58 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:58 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:58 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 10:59:58 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:19 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:00:19 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:19 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:19 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:19 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:33 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:00:33 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:33 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:33 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:00:33 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:05 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:02:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:16 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:02:16 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:16 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:16 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:16 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:23 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:02:23 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:23 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:23 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:23 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:32 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:02:32 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:32 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:32 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:02:32 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:04 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:03:04 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:04 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:04 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:04 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:05 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[19-Jul-2018 11:03:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[19-Jul-2018 11:03:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:10:52 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[24-Jul-2018 12:10:52 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:10:52 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:10:52 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:10:52 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:31 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[24-Jul-2018 12:30:31 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:31 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:31 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:31 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:54 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[24-Jul-2018 12:30:54 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:54 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:54 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:30:54 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:30 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[24-Jul-2018 12:31:30 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:30 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:30 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:30 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:35 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[24-Jul-2018 12:31:35 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:35 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:35 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[24-Jul-2018 12:31:35 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:10:37 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:10:37 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:10:37 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:10:37 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:10:37 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:13:14 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:13:14 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:13:14 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:13:14 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:13:14 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:15:27 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:15:27 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:15:27 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:15:27 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:15:27 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:18:18 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:18:18 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:18:18 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:18:18 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:18:18 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:20:42 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:20:42 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:20:42 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:20:42 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:20:42 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:21:07 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[07-Aug-2018 23:21:07 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:21:07 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:21:07 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[07-Aug-2018 23:21:07 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:29:35 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[09-Jan-2019 09:29:35 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:29:35 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:29:35 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:29:35 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:32:10 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[09-Jan-2019 09:32:10 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:32:10 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:32:10 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:32:10 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:33:05 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[09-Jan-2019 09:33:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:33:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:33:05 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[09-Jan-2019 09:33:05 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[14-Jan-2019 16:18:09 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[14-Jan-2019 16:18:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[14-Jan-2019 16:18:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[14-Jan-2019 16:18:09 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[14-Jan-2019 16:18:09 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:29 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[15-Jan-2019 15:07:29 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:29 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:29 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:29 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:39 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[15-Jan-2019 15:07:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:39 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:07:39 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:08:01 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[15-Jan-2019 15:08:01 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:08:01 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:08:01 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[15-Jan-2019 15:08:01 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:11:03 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[21-Jan-2019 12:11:03 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:11:03 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:11:03 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:11:03 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:12:17 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[21-Jan-2019 12:12:17 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:12:17 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:12:17 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:12:17 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:12 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[21-Jan-2019 12:18:12 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:12 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:12 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:12 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:43 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[21-Jan-2019 12:18:43 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:43 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:43 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:18:43 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:21:32 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[21-Jan-2019 12:21:32 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:21:32 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:21:32 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[21-Jan-2019 12:21:32 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:42 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[16-Feb-2019 08:57:42 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:42 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:42 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:42 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:45 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[16-Feb-2019 08:57:46 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:46 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:46 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[16-Feb-2019 08:57:46 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 18:52:25 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Feb-2019 18:52:25 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 18:52:25 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 18:52:25 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 18:52:25 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 19:04:10 america/lima] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 15
+[18-Feb-2019 19:04:10 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 19:04:10 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 19:04:10 america/lima] PHP Deprecated:  Function mysql_db_query() is deprecated in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40
+[18-Feb-2019 19:04:10 america/lima] PHP Deprecated:  mysql_db_query(): This function is deprecated; use mysql_query() instead in /home/lhernandez79/public_html/cglstorage/include/defs.php on line 40

@@ -62,7 +62,8 @@
                               package.trackingno as codigo,
                               package.totaltopay as total_pagar,
                               (quote.othervalue + quote_detail.price) as total_cobrar,
-                              package.stat
+                              package.stat,
+                              (package.weighttocollect * 1.50) as cost_house
                               from quote inner join customer on quote.id_customer = customer.id
                               		       inner join quote_detail on quote_detail.id_quote = quote.id
                                          inner join package on package.id = quote_detail.id_package
@@ -161,11 +162,11 @@
                                 <td class="tbdata"> <?php echo $value['codigo']?> </td>
                                 <td class="tbdata"> <?php echo $value['nombre_cliente']?> </td>
                                 <td class="tbdata"> <?php if ($value['stat']==2){ echo 'No cobrado'; }elseif($value['stat']==3){ echo 'Cobrado';}else{} ?> </td>
-                                <td class="tbdata"> <?php echo number_format($value['total_pagar'],2)?> </td>
+                                <td class="tbdata"> <?php echo number_format($value['cost_house'],2)?> </td>
                                 <td class="tbdata"> <?php echo number_format($value['total_cobrar'],2)?> </td>
-                                <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['total_pagar'],2)?> </td>
+                                <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['cost_house'],2)?> </td>
                                 <?php $cobrar += $value['total_cobrar']; ?>
-                                <?php $pagar += $value['total_pagar']; ?>
+                                <?php $pagar += $value['cost_house']; ?>
                               </tr>
                               <?php
                               }

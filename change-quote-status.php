@@ -21,4 +21,3 @@
       echo "<script>alert('Quote invoiced successfully');
       window.location='quote.php';</script>";
      }
-?>

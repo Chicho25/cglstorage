@@ -1,0 +1,1 @@
+[25-May-2018 19:05:10 Europe/London] PHP Fatal error:  Class 'ZipArchive' not found in /home/lhernandez79/public_html/cglstorage/PHPExcel/Classes/PHPExcel/Writer/Excel2007.php on line 205

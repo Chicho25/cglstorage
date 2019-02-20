@@ -23,18 +23,59 @@
     $message="";
      $dataImported=array();
 
-     if(isset($_FILES['myFile']) && $_FILES['myFile']['tmp_name'] != "")
+     if(isset($_POST['n_invoice']) && $_POST['n_invoice'] != "")
      {
-        $pathInfo = pathInfo($_FILES['myFile']['name']);
+        //$pathInfo = pathInfo($_FILES['myFile']['name']);
 
-        $import_cvs = array("name" => $_FILES['myFile']['tmp_name'],
+        $import_cvs = array("name" => $_POST['n_invoice'],
                             "date" => date("Y-m-d"),
                             "stat" => 1,
-                            "id_user" => $_SESSION['USER_ID']);
+                            "id_user" => $_SESSION['USER_ID'],
+                            "descrition" => $_POST['description'],
+                            "peso" => $_POST['peso'],
+                            "amount" => $_POST['amount']);
 
         $ID_IMPORT = InsertRec("importacion_cvs", $import_cvs);
 
-        if($pathInfo['extension'] == "csv")
+        if (isset($_POST['n_traking'])) {
+
+        $cadena = $_POST['n_traking'];
+        $explodiado = explode(" ", $cadena);
+        $i = 0;
+        foreach ($explodiado as $key => $value) {
+          $i++;
+
+          $arrVal = array(
+              "trackingno" => $value,
+              "number" => $i,
+              "widthlb" => 0,
+              "length" => 0,
+              "height" => 0,
+              "width" => 0,
+              "volume" => 0,
+              "totaltopay" => 0,
+              "id_user" => $_SESSION['USER_ID'],
+              "id_company" => $_SESSION['USER_COMPANY'],
+              "stat" => 1,
+              "created_on" => date("Y-m-d H:i:s"),
+              "id_import_cvs" => $ID_IMPORT
+             );
+
+             $NID = InsertRec("package", $arrVal);
+
+          }
+        }
+
+    if (isset($NID)) {
+
+      $message = '<div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Registro Realizado con Exito</strong>
+                  </div>';
+
+    }
+
+        /*if($pathInfo['extension'] == "csv")
         {
           $tmpName = $_FILES['myFile']['tmp_name'];
           $csvAsArray = array_map('str_getcsv', file($tmpName));
@@ -50,12 +91,12 @@
                   }
                     $arrVal = array(
                         "trackingno" => $value[0],
-                        "widthlb" => $value[1],
-                        "length" => $value[2],
-                        "height" => $value[3],
-                        "width" => $value[4],
-                        "volume" => $value[5],
-                        "totaltopay" => $value[6],
+                        "widthlb" => 0,
+                        "length" => 0,
+                        "height" => 0,
+                        "width" => 0,
+                        "volume" => 0,
+                        "totaltopay" => 0,
                         "id_user" => $_SESSION['USER_ID'],
                         "id_company" => $_SESSION['USER_COMPANY'],
                         "stat" => 1,
@@ -84,7 +125,7 @@
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Only CSV File extention allowed</strong>
                   </div>';
-        }
+        }*/
 
      }
 ?>
@@ -96,91 +137,52 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5><?php echo Import_Package?></h5>
-                    </div>
-                    <div class="ibox-content">
-                      <form class="form-horizontal" role="form" method="post"  enctype="multipart/form-data">
-                                <?php
-                                if($message !="")
-                                    echo $message;
-                          ?>
-                                    <div class="form-body">
-                                        <h3 class="form-section"><?php echo Package_Import_CSV?></h3>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="form-group clearfix">
-                                                   <div class="col-sm-9 ">
-                                                      <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                                          <div class="form-control" data-trigger="fileinput">
-                                                              <i class="glyphicon glyphicon-file fileinput-exists"></i>
-                                                          <span class="fileinput-filename"></span>
-                                                          </div>
-                                                          <span class="input-group-addon btn btn-default btn-file">
-                                                              <span class="fileinput-new"><?php echo Package_Select_file?></span>
-                                                              <span class="fileinput-exists"><?php echo Button_Change?></span>
-                                                              <input type="file" name="myFile"/>
-                                                          </span>
-                                                          <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput"><?php echo Button_Remove?></a>
-                                                      </div>
-                                                   </div>
-                                                   <div class="col-sm-3 col-md-3 ph-sm pb-sm">
-                                                      <button  class="btn btn-primary"><?php echo Button_Import?></button>
-                                                   </div>
-                                                   <!-- ngIf: showprogbar -->
-                                                </div>
+          <div class="ibox-title">
+              <h5><?php echo 'Importar Paquetes';?></h5>
+          </div>
+          <div class="ibox-content">
+            <form class="form-horizontal" role="form" method="post"  enctype="multipart/form-data">
+                      <?php
+                      if($message !="")
+                          echo $message;
+                ?>
+                          <div class="form-body">
+                              <h3 class="form-section"><?php echo 'Registrar';?></h3>
+                              <div class="row">
+                                  <div class="col-xs-12">
+                                      <div class="form-group clearfix">
+                                         <div class="col-sm-9 ">
+                                            <div class="form-group">
+                                              <input type="text" autocomplete="off" required placeholder="Numero de Factura" name="n_invoice" class="form-control">
                                             </div>
-                                        </div>
-                                        <!--/row-->
-                                    </div>
-
-                                </form>
-
-                                <?php if(count($dataImported) > 0) { ?>
-                                <table class="table table-striped table-bordered table-hover" id="tblform">
-                                          <thead>
-                                              <tr>
-                                                  <th><?php echo Package_Tracking_number?></th>
-                                                  <th><?php echo Package_Weight?></th>
-                                                  <th><?php echo Package_Length?></th>
-                                                  <th><?php echo Package_Height?></th>
-                                                  <th><?php echo Package_Width?></th>
-                                                  <th><?php echo Package_Volume?></th>
-                                                  <th><?php echo Package_Total_To_Pay?></th>
-
-
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-                                              <?php
-
-                                                foreach ($dataImported as $key => $value) {
-
-                                                ?>
-                                              <tr>
-                                                  <td class="tbdata"> <?php echo $value[0]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[1]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[2]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[3]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[4]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[5]?> </td>
-                                                  <td class="tbdata"> <?php echo $value[6]?> </td>
-
-                                              </tr>
-                                              <?php
-                                              }
-                                              ?>
-                                          </tbody>
-                                      </table>
-                                   <?php } ?>
-                        </div>
-                      </div>
+                                            <div class="form-group">
+                                              <input type="text" autocomplete="off" placeholder="Peso" name="peso" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <input type="text" autocomplete="off" required placeholder="Monto" name="amount" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <textarea placeholder="Descripcion" name="description" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <textarea rows="8" cols="80" required placeholder="Traking" name="n_traking" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                               <button  class="btn btn-primary">Registrar</button>
+                                            </div>
+                                         </div>
+                                         <!-- ngIf: showprogbar -->
+                                      </div>
+                                  </div>
+                              </div>
+                              <!--/row-->
+                          </div>
+                      </form>
+                    </div>
+                  </div>
             </div>
-
         </div>
-
     </div>
-
 <?php
   include("footer.php");
 ?>

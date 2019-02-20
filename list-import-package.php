@@ -115,7 +115,7 @@
                                   <td class="tbdata"> <?php echo $value['amount']?> </td>
                                   <td class="tbdata"> <?php if ($value['stat']==1){ echo 'Pendiente por pagar'; }else{ echo 'Pagado'; } ?> </td>
                                   <td class="tbdata"><a href="list-import-package-list.php?id_import_cvs=<?php echo $value['id']?>" class="btn btn-success btn-rounded"><?php echo 'Ver';?></a></td>
-                                  <td class="tbdata"><button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>
+                                  <td class="tbdata"><!--<button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>-->
 
                                     <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -130,7 +130,7 @@
                                                       <div class="form-group">
                                                         <label class="col-lg-3 text-right control-label">Monto a pagar</label>
                                                         <div class="col-lg-7">
-                                                          <input type="text" class="form-control" name="amount_pay" id="pricperpound"  data-required="true" autocomplete="off">
+                                                          <input type="text" class="form-control" name="amount_pay" id="pricperpound" data-required="true" autocomplete="off">
                                                           <input type="hidden" name="id_import" value="<?php echo $value['id']?>">
                                                           <input type="hidden" name="amount_current" value="<?php echo number_format($value['suma'], 2)?>">
                                                         </div>
