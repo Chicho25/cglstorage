@@ -56,14 +56,13 @@
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="row">
         <div class="col-lg-12">
-                <div class="ibox float-e-margins">
+           <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5><?php echo 'Lista de paquetes importados';?></h5>
                     </div>
                     <div class="ibox-content">
                       <form method="post">
                         <div class="row wrapper ">
-
                           <div class="col-sm-3 m-b-xs pull-right">
                             <div class="input-group">
                               <span class="input-group-btn padder "><button class="btn btn-success btn-rounded"><?php echo Search?></button></span>
@@ -81,7 +80,6 @@
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                           </div>
-
                         </div>
                       </form>
                         <div class="table-responsive">
@@ -115,8 +113,8 @@
                                   <td class="tbdata"> <?php echo $value['amount']?> </td>
                                   <td class="tbdata"> <?php if ($value['stat']==1){ echo 'Pendiente por pagar'; }else{ echo 'Pagado'; } ?> </td>
                                   <td class="tbdata"><a href="list-import-package-list.php?id_import_cvs=<?php echo $value['id']?>" class="btn btn-success btn-rounded"><?php echo 'Ver';?></a></td>
-                                  <td class="tbdata"><!--<button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>-->
-
+                                  <td class="tbdata"><button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>
+                                  
                                     <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog">
                                         <div class="modal-content animated bounceInRight">
@@ -128,8 +126,8 @@
                                                 <div class="modal-body">
                                                     <div class="row">
                                                       <div class="form-group">
-                                                        <label class="col-lg-3 text-right control-label">Monto a pagar</label>
-                                                        <div class="col-lg-7">
+                                                        <label class="col-lg-4 text-right control-label">Monto a pagar</label>
+                                                        <div class="col-lg-6">
                                                           <input type="text" class="form-control" name="amount_pay" id="pricperpound" data-required="true" autocomplete="off">
                                                           <input type="hidden" name="id_import" value="<?php echo $value['id']?>">
                                                           <input type="hidden" name="amount_current" value="<?php echo number_format($value['suma'], 2)?>">
@@ -145,7 +143,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                   
                                   </td>
                               </tr>
                               <?php
@@ -154,11 +152,19 @@
                                 $total_abonado += $value['amount'];
                               }
                               ?>
-                              <tr>
-                                <td colspan="4" style="text-align:right;">Total a Pagar</td>
+                             
+                             </tbody>
+                             <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Total a Pagar</td>
                                 <td><?php echo number_format(($total_deuda - $total_abonado), 2); ?></td>
-                              </tr>
-                              </tbody>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr> 
                             </table>
                         </div>
                   </div>
@@ -166,22 +172,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-    function readURL(input) {
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#img').show().attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    document.getElementById("trakin").focus();
-  </script>
 <?php
   include("footer.php");
 ?>

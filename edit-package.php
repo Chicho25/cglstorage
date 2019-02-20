@@ -31,7 +31,6 @@
                         "custompricerate" => $custompricerate,
                         "total_to_pay_customers" => $totaltopay,
                         "trackingno" => $trackingno,
-                        "shipper" => $shipper,
                         "id_customer" => $customer,
                         "stat" => $stval,
                        );
@@ -318,9 +317,9 @@
                             </div>
                           </div>
                           <div class="form-group required">
-                            <label class="col-lg-2 text-right control-label font-bold"><?php echo 'Cliente';?></label>
+                            <label class="col-lg-2 text-right control-label font-bold"><?php // echo 'Cliente';?></label>
                             <div class="col-lg-3 ">
-                                <input type="text" class="form-control" required="" value="<?php echo $arrCompany['shipper']?>"  name="shipper" data-required="true">
+                                <!--<input type="text" class="form-control" required="" value="<?php //echo $arrCompany['shipper']?>"  name="shipper" data-required="true">-->
                             </div>
                           </div>
                           <div class="form-group required">

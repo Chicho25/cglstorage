@@ -83,11 +83,10 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example">
                               <thead>
                                 <tr>
-                                  <th><?php echo Customer_Id?></th>
+                                  <th><?php echo Customer_Member_Number?></th>
                                   <th><?php echo Customer_Name?></th>
                                   <th><?php echo Customer_Contact_Name?></th>
                                   <th><?php echo Customer_Company_Name?></th>
-                                  <th><?php echo Customer_Member_Number?></th>
                                   <th><?php echo 'Membresia';?></th>
                                   <th><?php echo Status?></th>
                                   <th><?php echo Action?></th>
@@ -101,11 +100,10 @@
                                   $status = ($value['stat'] == 1) ? 'Active' : 'In Active';
                                 ?>
                               <tr <?php if($value['email']==1 || $value['id_membership']==0){ echo 'style="background-color:red; color:white;"';} ?>>
-                                  <td class="tbdata"> <?php echo $value['id_user']?> </td>
+                                  <td class="tbdata"> <?php echo $value['membernumber']?> </td>
                                   <td class="tbdata"> <?php echo $value['name']?> </td>
                                   <td class="tbdata"> <?php echo $value['contact']?> </td>
                                   <td class="tbdata"> <?php echo $value['CName']?> </td>
-                                  <td class="tbdata"> <?php echo $value['membernumber']?> </td>
                                   <td class="tbdata"> <?php echo $value['nombre_membresia']?> </td>
                                   <td class="tbdata"> <?php echo $status?> </td>
                                   <td> <button type="button" onclick="window.location='edit-customer.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_Edit?></button>

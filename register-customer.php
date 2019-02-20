@@ -23,7 +23,6 @@
         
           $arrVal = array(
                         "name" => $cname,
-                        "phone" => $phone,
                         "cellno" => $cellno,
                         "address" => $address,
                         "email" => $email,
@@ -108,22 +107,24 @@
                               <input type="text" class="form-control" required="" placeholder="<?php echo Customer_Address?>" name="address" data-required="true">                        
                             </div>  
                           </div>
+                          <?php /*
                           <div class="form-group required">
                             <label class="col-lg-4 text-right control-label font-bold"><?php echo Customer_Phone?></label>
                             <div class="col-lg-4">
                               <input type="text" class="form-control" required="" placeholder="<?php echo Customer_Phone?>" name="phone" data-required="true">                        
                             </div>  
                           </div>
+                          */ ?>
                           <div class="form-group required">
                             <label class="col-lg-4 text-right control-label font-bold"><?php echo Customer_Mobile?></label>
                             <div class="col-lg-4">
                               <input type="text" class="form-control" required="" placeholder="<?php echo Customer_Mobile?>" name="cellno" data-required="true">                        
                             </div>  
                           </div>
-                          <div class="form-group required">
+                          <div class="form-group">
                             <label class="col-lg-4 text-right control-label font-bold"><?php echo Customer_Email?></label>
                             <div class="col-lg-4">
-                              <input type="email" class="form-control" required="" placeholder="<?php echo Customer_Email?>" name="email" data-required="true">                        
+                              <input type="email" class="form-control" placeholder="<?php echo Customer_Email?>" name="email">                        
                             </div>  
                           </div>
                           <div class="form-group required">
