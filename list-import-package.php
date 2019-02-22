@@ -8,6 +8,7 @@
     $loggdUType = current_user_type();
 
     include("header.php");
+    $message = "";
 
     if(!isset($_SESSION['USER_ID']))
      {
@@ -15,14 +16,40 @@
           exit;
      }
 
+     // Delete Record
+     if (isset($_POST['deleteList'])) {
+       DeleteRec("package","id_import_cvs =".$_POST['id_delete']);
+       DeleteRec("importacion_cvs", "id=".$_POST['id_delete']);
+
+       $message = '<div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Lista de paquetes borrada con exito</strong>
+                    </div>';
+     }
+
     if (isset($_POST['amount_pay'], $_POST['id_import'])) {
-      $array_monto = array("amount" => ($_POST['amount_pay']+$_POST['amount_current']));
-      UpdateRec("importacion_cvs", "id=".$_POST['id_import'], $array_monto);
+    
+      $arrVal = array("id_list" =>$_POST['id_import'], 
+                      "amount" =>$_POST['amount_pay'], 
+                      "stat" => 1);
+
+      $insert = InsertRec("pay_provider", $arrVal);
+
+      if(isset($insert)){
+        $message = '<div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Pago realizado</strong>
+                    </div>';
+      }
+      
       $obtener_amount = GetRecords("select * from importacion_cvs where id='".$_POST['id_import']."'");
-      if ($obtener_amount[0]['amount'] >= $_POST['amount_current']) {
+      $get_amount = GetRecords("select sum(amount) as total from pay_provider where id_list='".$_POST['id_import']."'");
+      
+      if ($get_amount[0]['total'] >= $obtener_amount[0]['amount']) {
         $stat = array("stat"=>2);
         UpdateRec("importacion_cvs", "id=".$_POST['id_import'], $stat);
       }
+    
     }
 
     $where = "where (1=1)";
@@ -44,7 +71,7 @@
 
 
       $arrUser = GetRecords("SELECT *, (select count(*) from package where id_import_cvs = importacion_cvs.id) as contar,
-                                       (select sum(totaltopay) from package where id_import_cvs = importacion_cvs.id) as suma
+                                       (select sum(amount) from pay_provider where id_list = importacion_cvs.id) as suma
                               FROM  importacion_cvs
                               $where");
 
@@ -56,6 +83,7 @@
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="row">
         <div class="col-lg-12">
+        <?php echo $message; ?>
            <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5><?php echo 'Lista de paquetes importados';?></h5>
@@ -92,16 +120,20 @@
                                   <th>Cantidad</th>
                                   <th>Total a pagar</th>
                                   <th>Pagado</th>
+                                  <th>Restante</th>
                                   <th>Status</th>
                                   <th>Ver Paquetes</th>
                                   <th>Pagar</th>
+                                  <th>Eliminar</th>
                                 </tr>
                               </thead>
                               <tbody>
                               <?PHP
                                 $i=1;
-                                $total_deuda = 0;
-                                $total_abonado = 0;
+                                $monto_pagar = 0;
+                                $monto_pagado = 0;
+                                $monto_restante = 0;
+                                $contar = 0;
                                 foreach ($arrUser as $key => $value) {
                                 ?>
                               <tr>
@@ -109,13 +141,15 @@
                                   <td class="tbdata"> <?php echo $value['name']?> </td>
                                   <td class="tbdata"> <?php echo $value['date']?> </td>
                                   <td class="tbdata"> <?php echo $value['contar']?> </td>
-                                  <td class="tbdata"> <?php echo number_format($value['suma'], 2);?> </td>
-                                  <td class="tbdata"> <?php echo $value['amount']?> </td>
+                                  <td class="tbdata"> <?php echo number_format($value['amount'], 2);?> $</td>
+                                  <td class="tbdata"> <?php echo number_format($value['suma'], 2);?> $</td>
+                                  <td class="tbdata"> <?php echo number_format(($value['amount'] - $value['suma']), 2);?> $</td>
                                   <td class="tbdata"> <?php if ($value['stat']==1){ echo 'Pendiente por pagar'; }else{ echo 'Pagado'; } ?> </td>
                                   <td class="tbdata"><a href="list-import-package-list.php?id_import_cvs=<?php echo $value['id']?>" class="btn btn-success btn-rounded"><?php echo 'Ver';?></a></td>
-                                  <td class="tbdata"><button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>
-                                  
-                                    <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <td class="tbdata"><button data-toggle="modal" data-target="#myModal<?php echo $value['id']?>" class="btn btn-success btn-rounded"><?php echo 'Pagar';?></button>
+                                  <?php $maximo = $value['amount'] - $value['suma'];?>
+
+                                    <div class="modal inmodal" id="myModal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog">
                                         <div class="modal-content animated bounceInRight">
                                                 <div class="modal-header">
@@ -128,7 +162,7 @@
                                                       <div class="form-group">
                                                         <label class="col-lg-4 text-right control-label">Monto a pagar</label>
                                                         <div class="col-lg-6">
-                                                          <input type="text" class="form-control" name="amount_pay" id="pricperpound" data-required="true" autocomplete="off">
+                                                          <input type="number" class="form-control" max="<?php echo $maximo; ?>" name="amount_pay" require autocomplete="off">
                                                           <input type="hidden" name="id_import" value="<?php echo $value['id']?>">
                                                           <input type="hidden" name="amount_current" value="<?php echo number_format($value['suma'], 2)?>">
                                                         </div>
@@ -145,11 +179,45 @@
                                     </div>
                                    
                                   </td>
+                                  <td class="tbdata">
+                                    <button data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-rounded"><?php echo 'Eliminar';?></button>
+                                    <div class="modal inmodal" id="myModal2<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                                    <h4 class="modal-title" style="color:red;"><?php echo 'Eliminar lista';?></h4>
+                                                </div>
+                                                <form class="form-horizontal" action="" method="post">
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                      <div class="form-group">
+                                                        <label class="col-lg-4 text-right control-label" style="color:red;">Eliminar lista</label>
+                                                        <div class="col-lg-6" style="color:red;">
+                                                          <p>
+                                                            Recuerde que, se borraran todos los paquetes que pertenecen a esta lista
+                                                          </p>
+                                                          <input type="hidden" name="id_delete" value="<?php echo $value['id']?>">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                                    <button type="submit" class="btn btn-primary" name="deleteList"><?php echo 'Eliminar';?></button>
+                                                </div>
+                                              </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </td>
                               </tr>
                               <?php
                                 $i++;
-                                $total_deuda += $value['suma'];
-                                $total_abonado += $value['amount'];
+                                 $monto_pagar += number_format($value['amount'], 2);
+                                 $monto_pagado += number_format($value['suma'], 2);
+                                 $monto_restante += number_format(($value['amount'] - $value['suma']), 2);
+                                 $contar += $value['contar'];
                               }
                               ?>
                              
@@ -157,11 +225,12 @@
                              <tr>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td>Total a Pagar</td>
-                                <td><?php echo number_format(($total_deuda - $total_abonado), 2); ?></td>
-                                <td></td>
-                                <td></td>
+                                <td><b>Totales: </b></td>
+                                <td><b><?php echo $contar; ?></b></td>
+                                <td><b><?php echo number_format($monto_pagar, 2); ?> $</b></td>
+                                <td><b><?php echo number_format($monto_pagado, 2); ?> $</b></td>
+                                <td><b><?php echo number_format($monto_restante, 2); ?> $</b></td>
+
                                 <td></td>
                                 <td></td>
                              </tr> 

@@ -9,6 +9,19 @@
     
     include("header.php"); 
 
+     $message = "";
+
+     if (isset($_POST['deleteUser'])) {
+
+      DeleteRec("membership","id =".$_POST['id_delete']);
+  
+      $message = '<div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Membresia Eliminada</strong>
+                    </div>';
+    }
+
+
     if(!isset($_SESSION['USER_ID'])) 
      {
           header("Location: index.php");
@@ -50,6 +63,7 @@
         <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
+                    <?php echo $message; ?>
                         <h5><?php echo Membership_List?></h5>
                     </div>
                     <div class="ibox-content">
@@ -105,6 +119,36 @@
                                   <td class="tbdata"> <?php echo $value['CName']?> </td>
                                   <td class="tbdata"> <?php echo $status?> </td>
                                   <td> <button type="button" onclick="window.location='edit-membership.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_Edit?></button> 
+                                    <button data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-info"><?php echo 'Eliminar';?></button>
+                                        <div class="modal inmodal" id="myModal2<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                          <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                              <h4 class="modal-title" style="color:red;"><?php echo 'Eliminar Membresia';?></h4>
+                                            </div>
+                                            <form class="form-horizontal" action="" method="post">
+                                            <div class="modal-body">
+                                              <div class="row">
+                                                <div class="form-group">
+                                                  <label class="col-lg-4 text-right control-label" style="color:red;">Eliminar Membresia</label>
+                                                  <div class="col-lg-6" style="color:red;">
+                                                    <p>
+                                                      Se recomienda que se desactive, si borra la membresia, borrara todos los datos asosiados a la misma.
+                                                    </p>
+                                                    <input type="hidden" name="id_delete" value="<?php echo $value['id']?>">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              </div>
+                                              <div class="modal-footer">
+                                              <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                              <button type="submit" class="btn btn-primary" name="deleteUser"><?php echo 'Eliminar';?></button>
+                                              </div>
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>  
                                   </td>
                               </tr>
                               <?php

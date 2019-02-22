@@ -60,11 +60,11 @@
      }
 ?>
   <?php
-      if(RecCount("membership", "id_user = ".$_SESSION['USER_ID']." and id_company = ".$_SESSION['USER_COMPANY']." and id = ".$_REQUEST['id']) == 0)
+      /*if(RecCount("membership", "id_user = ".$_SESSION['USER_ID']." and id_company = ".$_SESSION['USER_COMPANY']." and id = ".$_REQUEST['id']) == 0)
       {
         header("location:membership.php");
         exit;
-      }
+      }*/
       $arrMembership = GetRecord("membership", "id = ".$_REQUEST['id']);
       $status = ($arrMembership['stat'] == 1) ? 'checked' : '';
       $bcName = Edit_Membership;

@@ -1,8 +1,8 @@
 <?php
 	date_default_timezone_set('america/lima');
 	$DB_Server = "localhost";
-	$DB_Username ="cglstorage";
-	$DB_Password = "178718397406";
+	$DB_Username ="root";
+	$DB_Password = "";
 	$DB_DBName = "cglstorage";
 
 	$arrStatus = array("1" => "Active", "2" => "Pending", "3" => "Won", "4" => "Lost", "5" => "Cancelled", "6" => "Finished");
