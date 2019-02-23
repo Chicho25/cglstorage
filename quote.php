@@ -9,6 +9,54 @@
 
     include("header.php");
 
+    $message = "";
+
+    if (isset($_POST['deleteInvoice'])) {
+
+      DeleteRec("quote","id =".$_POST['id_delete']);
+      DeleteRec("quote_detail","id_quote =".$_POST['id_delete']);
+  
+      $message = '<div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Factura Eliminada</strong>
+                    </div>';
+    }
+
+    if (isset($_POST['payInvoice'])) {
+      
+        $array_detail = array("id_invoice" => $_POST['id_invoice'], 
+                              "id_method" => $_POST['method'], 
+                              "descriptions" => $_POST['descriptions'],
+                              "id_user" => $_SESSION['USER_ID'], 
+                              "date_time" => date("Y-m-d H:i:s"), 
+                              "stat" => 1);
+
+        $id_pay_detail = InsertRec("pay_datail_invoice",$array_detail);
+
+        if(isset($_FILES['attach']) && $_FILES['attach']['tmp_name'] != "")
+              {
+                  $target_dir = "attched/";
+                  $target_file = $target_dir . basename($_FILES["attach"]["name"]);
+                  $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                  $filename = $target_dir . $id_pay_detail.".".$imageFileType;
+                  $filenameThumb = $target_dir . $id_pay_detail."_thumb.".$imageFileType;
+                  if (move_uploaded_file($_FILES["attach"]["tmp_name"], $filename))
+                  {
+                      //makeThumbnailsWithGivenWidthHeight($target_dir, $imageFileType, $id_pay_detail, 200, 200);
+
+                      UpdateRec("pay_datail_invoice", "id = ".$id_pay_detail, array("attched" => $filenameThumb));
+                  }
+              }
+          UpdateRec("quote", "id = ".$_POST['id_invoice'], array("stat" => 2));
+          UpdateRec("package", "id in (select 
+                                        id_package 
+                                        from 
+                                        quote_detail
+                                        where 
+                                        id_quote = ".$_POST['id_invoice'].") ", array("stat" => 3));
+
+    }
+
     if(!isset($_SESSION['USER_ID']))
      {
           header("Location: index.php");
@@ -55,6 +103,7 @@
         <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
+                        <?php echo $message; ?>
                         <h5><?php echo Quote_List?></h5>
                     </div>
                     <div class="ibox-content">
@@ -88,9 +137,9 @@
                                     $kinDesc = $value['name'];
                                 ?>
                                 <option value="<?php echo $value['id']?>"><?php echo $kinDesc?></option>
-                                <?php
-                            }
-                                ?>
+                            <?php
+                              }
+                            ?>
                               </select>
                           </div>
                           <div class="col-sm-3 m-b-xs ph0 pull-right" >
@@ -143,8 +192,85 @@
                                   <a href='print-quote.php?id=<?php echo $value['id']?>' target="_blank" class="btn green btn-info"><?php echo Button_Print?></a>
                                   <a href='pdf_factura.php?id=<?php echo $value['id']?>' target="_blank" class="btn green btn-info"><?php echo 'Ver';?></a>
                                   <?php if($value['stat'] != 2) : ?>
-                                  <button type="button" onclick="window.location='change-quote-status.php?id=<?php echo $value['id']?>';" class="btn green btn-warning"><?php echo Button_Invoice?></button>
-                                <?php endif; ?>
+                                  <!--<a type="button" onclick="window.location='change-quote-status.php?id=<?php echo $value['id']?>';" class="btn green btn-warning"><?php /*echo Button_Invoice*/?></a>-->
+                                  <a data-toggle="modal" data-target="#myModal3<?php echo $value['id']?>" class="btn btn-warning btn-info"><?php echo 'Pago';?></a>
+                                      <div class="modal inmodal" id="myModal3<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                          <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                              <h4 class="modal-title" style="color:red;"><?php echo 'Pago de Factura';?></h4>
+                                            </div>
+                                            <form></form>
+                                            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                              <div class="row">
+                                                <div class="form-group">
+                                                  <label class="col-lg-4 text-right control-label">Metodo</label>
+                                                  <div class="col-lg-6">
+                                                    <select name="method" class="form-control">
+                                                      <option value="">Seleccionar</option>
+                                                      <option value="1">Efectivo</option>
+                                                      <option value="2">Cheque</option>
+                                                      <option value="3">ACH(Transferencia)</option>
+                                                      <option value="4">Tarjeta</option>
+                                                    </select>
+                                                    <input type="hidden" name="id_invoice" value="<?php echo $value['id']?>">
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label class="col-lg-4 text-right control-label">Descripcion</label>
+                                                  <div class="col-lg-6">
+                                                    <textarea class="form-control" name="descriptions" id="" cols="20" rows="6"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label class="col-lg-4 text-right control-label">Adjunto</label>
+                                                  <div class="col-lg-6">
+                                                    <input type="file" name="attach" class="form-control">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              </div>
+                                              <div class="modal-footer">
+                                              <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                              <button type="submit" class="btn btn-primary" name="payInvoice"><?php echo 'Pagar';?></button>
+                                              </div>
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>  
+                                  <?php endif; ?>
+                                  <a data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-info"><?php echo 'Eliminar';?></a>
+                                        <div class="modal inmodal" id="myModal2<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                          <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                              <h4 class="modal-title" style="color:red;"><?php echo 'Eliminar Factura';?></h4>
+                                            </div>
+                                            <form class="form-horizontal" action="" method="post">
+                                            <div class="modal-body">
+                                              <div class="row">
+                                                <div class="form-group">
+                                                  <label class="col-lg-4 text-right control-label" style="color:red;">Eliminar Factura</label>
+                                                  <div class="col-lg-6" style="color:red;">
+                                                    <p>
+                                                      Esta seguro que desea borrar la factura?
+                                                    </p>
+                                                    <input type="hidden" name="id_delete" value="<?php echo $value['id']?>">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              </div>
+                                              <div class="modal-footer">
+                                              <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                              <button type="submit" class="btn btn-primary" name="deleteInvoice"><?php echo 'Eliminar';?></button>
+                                              </div>
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>  
                                   </td>
                               </tr>
                               <?php
