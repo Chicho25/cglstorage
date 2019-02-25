@@ -28,6 +28,103 @@
             width: 400px !important;
         }
     </style>
+    <style media="screen">
+    
+          .invoice{
+          width:970px !important;
+          margin:50px auto;
+          .invoice-header{
+            padding:25px 25px 15px;
+            h1{
+              margin:0
+            }
+            .media{
+              .media-body{
+                font-size:.9em;
+                margin:0;
+              }
+            }
+          }
+          .invoice-body{
+            border-radius:10px;
+            padding:25px;
+            background:#FFF;
+          }
+          .invoice-footer{
+            padding:15px;
+            font-size:0.9em;
+            text-align:center;
+            color:#999;
+          }
+          }
+          .logo{
+          max-height:70px;
+          border-radius:10px;
+          }
+          .dl-horizontal{
+          margin:0;
+          dt{
+                float: left;
+            width: 80px;
+            overflow: hidden;
+            clear: left;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          dd{
+            margin-left:90px;
+          }
+          }
+          .rowamount{
+          padding-top:15px !important;
+          }
+          .rowtotal{
+          font-size:1.3em;
+          }
+          .colfix{
+          width:12%;
+          }
+          .mono{
+          font-family:monospace;
+          }
+          .button
+          {
+          width: 100%;
+          border: 1px solid #DBE1EB;
+          font-size: 18px;
+          font-family: Arial, Verdana;
+          padding-left: 7px;
+          padding-right: 7px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          -o-border-radius: 4px;
+          background: #4972B5;
+          background: linear-gradient(left, #4972B5, #618ACB);
+          background: -moz-linear-gradient(left, #4972B5, #618ACB);
+          background: -webkit-linear-gradient(left, #4972B5, #618ACB);
+          background: -o-linear-gradient(left, #4972B5, #618ACB);
+          color: #FFFFFF;
+          }
+
+          .button:hover
+          {
+          background: #365D9D;
+          background: linear-gradient(left, #365D9D, #436CAD);
+          background: -moz-linear-gradient(left, #365D9D, #436CAD);
+          background: -webkit-linear-gradient(left, #365D9D, #436CAD);
+          background: -o-linear-gradient(left, #365D9D, #436CAD);
+          color: #FFFFFF;
+          border-color: #FBFFAD;
+          }
+          .caja {
+           width: 200px;
+           margin: 0 auto;
+          }
+    </style>
 </head>
 
 <body>

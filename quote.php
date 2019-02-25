@@ -15,7 +15,7 @@
 
       DeleteRec("quote","id =".$_POST['id_delete']);
       DeleteRec("quote_detail","id_quote =".$_POST['id_delete']);
-  
+
       $message = '<div class="alert alert-danger">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                       <strong>Factura Eliminada</strong>
@@ -23,12 +23,12 @@
     }
 
     if (isset($_POST['payInvoice'])) {
-      
-        $array_detail = array("id_invoice" => $_POST['id_invoice'], 
-                              "id_method" => $_POST['method'], 
+
+        $array_detail = array("id_invoice" => $_POST['id_invoice'],
+                              "id_method" => $_POST['method'],
                               "descriptions" => $_POST['descriptions'],
-                              "id_user" => $_SESSION['USER_ID'], 
-                              "date_time" => date("Y-m-d H:i:s"), 
+                              "id_user" => $_SESSION['USER_ID'],
+                              "date_time" => date("Y-m-d H:i:s"),
                               "stat" => 1);
 
         $id_pay_detail = InsertRec("pay_datail_invoice",$array_detail);
@@ -48,11 +48,11 @@
                   }
               }
           UpdateRec("quote", "id = ".$_POST['id_invoice'], array("stat" => 2));
-          UpdateRec("package", "id in (select 
-                                        id_package 
-                                        from 
+          UpdateRec("package", "id in (select
+                                        id_package
+                                        from
                                         quote_detail
-                                        where 
+                                        where
                                         id_quote = ".$_POST['id_invoice'].") ", array("stat" => 3));
 
     }
@@ -85,7 +85,12 @@
       if (isset($_POST['customer']) && $_POST['customer'] != '') {
          $where .= " and quote.id_customer =".$_POST['customer'];
       }
-      $arrUser = GetRecords("SELECT quote.othervalue, quote.stat, quote.id, quote.date, customer.name as CName, sum(quote_detail.price) as total
+      $arrUser = GetRecords("SELECT quote.othervalue,
+                                    quote.stat,
+                                    quote.id,
+                                    quote.date,
+                                    customer.name as CName, sum(quote_detail.price) as total,
+                                    quote.id_customer
                             from quote
                             inner join quote_detail on quote_detail.id_quote = quote.id
                             inner join customer on customer.id = quote.id_customer
@@ -107,6 +112,31 @@
                         <h5><?php echo Quote_List?></h5>
                     </div>
                     <div class="ibox-content">
+                      <form class="" action="" method="post">
+                        <div class="col-sm-3 m-b-xs pull-right">
+                          <div class="input-group">
+                            <span class="input-group-btn padder "><button class="btn btn-success btn-rounded"><?php echo Search?></button></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 m-b-xs pull-right">
+                            <select class="chosen-select form-control" name="customer">
+                              <option value="">---------</option>
+                              <?PHP
+                              $arrKindMeetings = GetRecords("Select * from customer where stat=1");
+                              foreach ($arrKindMeetings as $key => $value) {
+                                $kinId = $value['id'];
+                                if($value['membernumber'] != "")
+                                  $kinDesc = $value['name']."-".$value['membernumber'];
+                                else
+                                  $kinDesc = $value['name'];
+                              ?>
+                              <option value="<?php echo $value['id']?>"><?php echo $kinDesc?></option>
+                          <?php
+                            }
+                          ?>
+                            </select>
+                        </div>
+                      </form>
                       <form method="post" method="post" action="invoice_selection.php">
                         <div class="row wrapper ">
                           <div class="col-sm-2 pull-left">
@@ -119,36 +149,14 @@
                               <button type="submit" class="btn btn-success btn-rounded" name="pay_selection"><?php echo 'Pagar Seleccion';?></button>
                             </span>
                           </div>
-                          <div class="col-sm-3 m-b-xs pull-right">
-                            <div class="input-group">
-                              <span class="input-group-btn padder "><button class="btn btn-success btn-rounded"><?php echo Search?></button></span>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                              <select class="chosen-select form-control" name="customer">
-                                <option value="">---------</option>
-                                <?PHP
-                                $arrKindMeetings = GetRecords("Select * from customer where stat=1");
-                                foreach ($arrKindMeetings as $key => $value) {
-                                  $kinId = $value['id'];
-                                  if($value['membernumber'] != "")
-                                    $kinDesc = $value['name']."-".$value['membernumber'];
-                                  else
-                                    $kinDesc = $value['name'];
-                                ?>
-                                <option value="<?php echo $value['id']?>"><?php echo $kinDesc?></option>
-                            <?php
-                              }
-                            ?>
-                              </select>
-                          </div>
-                          <div class="col-sm-3 m-b-xs ph0 pull-right" >
+
+                          <!--<div class="col-sm-3 m-b-xs ph0 pull-right" >
                             <div class="input-group">
                               <input type="radio" name="status" value="1" <?php echo $c=(isset($status) && $status == 1) ? 'checked' : ''?> > <?php echo Active?>
                               <input type="radio" name="status" value="2" <?php echo $c=(isset($status) && $status == 2) ? 'checked' : ''?> > <?php echo Invoice?>
                               <input type="radio" name="status" value="0" <?php echo $c=(isset($status) && $status == 0) ? 'checked' : ''?> > <?php echo Archived?>
                             </div>
-                          </div>
+                          </div>-->
 
                         </div>
 
@@ -176,7 +184,7 @@
                               <tr>
                                   <td class="tbdata"> <input type="checkbox" name="fact[]" value="<?php echo $value['id']?>" style="width:80px;"> </td>
                                   <td class="tbdata"> <?php echo $value['id']?> </td>
-                                  <td class="tbdata"> <?php echo $value['CName']?> </td>
+                                  <td class="tbdata"> <?php echo $value['CName'].' '.$value['id_customer']?> </td>
                                   <td class="tbdata"> <?php echo $value['date']?> </td>
                                   <td class="tbdata"> <?php echo round($value['total'] + $value['othervalue'] , 2)?> $</td>
                                   <td class="tbdata"> <?php echo $status?> </td>
@@ -240,7 +248,7 @@
                                             </form>
                                         </div>
                                       </div>
-                                    </div>  
+                                    </div>
                                   <?php endif; ?>
                                   <?php if($_SESSION['USER_ID'] == 30 || $_SESSION['USER_ID'] == 1){ ?>
                                   <a data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-info"><?php echo 'Eliminar';?></a>
@@ -273,7 +281,7 @@
                                             </form>
                                         </div>
                                       </div>
-                                    </div>  
+                                    </div>
                                   </td>
                               </tr>
                               <?php
