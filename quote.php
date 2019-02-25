@@ -107,7 +107,7 @@
                         <h5><?php echo Quote_List?></h5>
                     </div>
                     <div class="ibox-content">
-                      <form method="post" method="post" action="update_selecction_pay.php">
+                      <form method="post" method="post" action="invoice_selection.php">
                         <div class="row wrapper ">
                           <div class="col-sm-2 pull-left">
                             <span class="input-group-btn padder ">
@@ -182,8 +182,9 @@
                                   <td class="tbdata"> <?php echo $status?> </td>
                                   <td>
                                     <?php if($value['stat'] != 2) : ?>
+                                    <?php if($_SESSION['USER_ID'] == 30 || $_SESSION['USER_ID'] == 1){ ?>
                                     <button type="button" onclick="window.location='edit-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_Edit?></button>
-
+                                    <?php } ?>
                                     <?php endif; ?>
                                     <?php if($value['stat'] == 2) : ?>
                                       <button type="button" onclick="window.location='view-quote.php?id=<?php echo $value['id']?>';" class="btn green btn-info"><?php echo Button_View?></button>
@@ -241,7 +242,9 @@
                                       </div>
                                     </div>  
                                   <?php endif; ?>
+                                  <?php if($_SESSION['USER_ID'] == 30 || $_SESSION['USER_ID'] == 1){ ?>
                                   <a data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-info"><?php echo 'Eliminar';?></a>
+                                  <?php } ?>
                                         <div class="modal inmodal" id="myModal2<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
                                           <div class="modal-dialog">
                                           <div class="modal-content animated bounceInRight">

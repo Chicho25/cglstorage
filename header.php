@@ -1,16 +1,13 @@
 <?php
-    include("translation/constants.php"); 
+    include("translation/constants.php");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CRM</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
@@ -25,7 +22,6 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-
     <style type="text/css">
         .chosen-select .search-field input[type="text"]
         {
@@ -38,7 +34,7 @@
 
     <div id="wrapper">
         <?php
-        if(isset($_SESSION['USER_ID'])) 
+        if(isset($_SESSION['USER_ID']))
           include("left-nav.php"); ?>
         <div id="page-wrapper" class="gray-bg">
             <div class="row border-bottom">

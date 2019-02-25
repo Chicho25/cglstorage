@@ -48,12 +48,13 @@
         $crtDatTo = date("Y-m-d");
 
 
-        if($customer != "" )
+        if(isset($customer) && $customer != "")
         {
           $whreQte.= " and customer.id = '".$customer."'";
         }
-
+      $cost_provider = GetRecords("SELECT cost FROM provider_cost");
       $arrUser = GetRecords("select
+                              quote.id,
                               quote.date as fecha,
                               quote.othervalue,
                               customer.name as nombre_cliente,
@@ -63,11 +64,15 @@
                               package.totaltopay as total_pagar,
                               (quote.othervalue + quote_detail.price) as total_cobrar,
                               package.stat,
-                              (package.weighttocollect * 1.50) as cost_house
+                              (package.weighttocollect * '".$cost_provider[0]['cost']."') as cost_house, 
+                              pay_datail_invoice.id_method, 
+                              pay_datail_invoice.descriptions, 
+                              pay_datail_invoice.attched
                               from quote inner join customer on quote.id_customer = customer.id
-                              		       inner join quote_detail on quote_detail.id_quote = quote.id
-                                         inner join package on package.id = quote_detail.id_package
-                                         $whreQte");
+                                    inner join quote_detail on quote_detail.id_quote = quote.id
+                                    inner join package on package.id = quote_detail.id_package
+                                    left join pay_datail_invoice on pay_datail_invoice.id_invoice = quote.id
+                                    $whreQte");
 
 ?>
      <?php
@@ -140,6 +145,7 @@
                                   <th>Costo de compra</th>
                                   <th>Costo de venta</th>
                                   <th>Ganancia</th>
+                                  <th>Detalles</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -155,16 +161,62 @@
                                   //if($debit > 0)
                                     //$balance = $balance - $debit;
                                   //else
-                                    //$balance = $balance + $credit;
-                                ?>
+                                    //$balance = $balance + $credit; ?>
                               <tr>
                                 <td class="tbdata"> <?php echo $value['fecha']?> </td>
                                 <td class="tbdata"> <?php echo $value['codigo']?> </td>
                                 <td class="tbdata"> <?php echo $value['nombre_cliente']?> </td>
                                 <td class="tbdata"> <?php if ($value['stat']==2){ echo 'No cobrado'; }elseif($value['stat']==3){ echo 'Cobrado';}else{} ?> </td>
-                                <td class="tbdata"> <?php echo number_format($value['cost_house'],2)?> </td>
-                                <td class="tbdata"> <?php echo number_format($value['total_cobrar'],2)?> </td>
-                                <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['cost_house'],2)?> </td>
+                                <td class="tbdata"> <?php echo number_format($value['cost_house'],2).' $';?> </td>
+                                <td class="tbdata"> <?php echo number_format($value['total_cobrar'],2).' $';?> </td>
+                                <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['cost_house'],2).' $';?> </td>
+                                <td class="tbdata"> <a data-toggle="modal" data-target="#myModal3<?php echo $value['id']?>" class="btn btn-success btn-info"><?php echo 'Ver';?></a>
+                                                    <div class="modal inmodal" id="myModal3<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                                       <div class="modal-dialog">
+                                                          <div class="modal-content animated bounceInRight">
+                                                            <div class="modal-header">
+                                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><?php echo Button_Close?></span></button>
+                                                              <h4 class="modal-title" style="color:red;"><?php echo 'Detalle';?></h4>
+                                                            </div>
+                                                            <form action="" method="post">
+                                                            <div class="modal-body">
+                                                              <div class="row">
+                                                                <div class="form-group col-lg-12">
+                                                                  <label class="col-lg-12 control-label">Met</label>
+                                                                  <div class="col-lg-12">
+                                                                   <select name="method" class="form-control" disabled style="width:100%;">
+                                                                    <option value="">Seleccionar</option>
+                                                                    <option value="1" <?php if($value['id_method'] == 1){ echo 'selected'; } ?>>Efectivo</option>
+                                                                    <option value="2" <?php if($value['id_method'] == 2){ echo 'selected'; } ?>>Cheque</option>
+                                                                    <option value="3" <?php if($value['id_method'] == 3){ echo 'selected'; } ?>>ACH(Transferencia)</option>
+                                                                    <option value="4" <?php if($value['id_method'] == 4){ echo 'selected'; } ?>>Tarjeta</option>
+                                                                    </select>
+                                                                   </div>
+                                                                 </div>
+                                                                <div class="form-group col-lg-12">
+                                                                  <label class="col-lg-12 control-label">Des</label>
+                                                                  <div class="col-lg-12">
+                                                                    <textarea class="form-control" name="descriptions" id="" cols="20" rows="6" readonly style="width:100%;"><?php echo $value['descriptions']; ?></textarea>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group col-lg-12">
+                                                                  <label class="col-lg-12 control-label">Adj</label>
+                                                                  <div class="col-lg-12">
+                                                                    <a href="http://ofertadeviaje.com/cglstorage/attched/<?php echo str_replace("_thumb","",$value['attched']); ?>" target="_blank">Adjunto</a>
+                                                                  </div>
+                                                                </div>
+                                                               </div>
+                                                             </div>
+                                                             <br>
+                                                             <br><br>
+                                                                <div class="footer">
+                                                                  <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo Button_Close?></button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                      </div>
+                                                    </div> 
+                                </td>
                                 <?php $cobrar += $value['total_cobrar']; ?>
                                 <?php $pagar += $value['cost_house']; ?>
                               </tr>
@@ -174,9 +226,9 @@
                               </tbody>
                               <tr>
                                   <td class="tbdata" colspan="4"> <b>Totales</b> </td>
-                                  <td class="tbdata"><b> <?php echo number_format($pagar,2)?></b> </td>
-                                  <td class="tbdata"><b> <?php echo number_format($cobrar,2)?> </b></td>
-                                  <td class="tbdata"><b> <?php echo number_format($cobrar-$pagar,2)?> </b></td>
+                                  <td class="tbdata"><b> <?php echo number_format($pagar,2).' $';?></b> </td>
+                                  <td class="tbdata"><b> <?php echo number_format($cobrar,2).' $';?> </b></td>
+                                  <td class="tbdata"><b> <?php echo number_format($cobrar-$pagar,2).' $';?> </b></td>
                               </tr>
                             </table>
                             <br>

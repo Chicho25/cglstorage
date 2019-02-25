@@ -128,7 +128,9 @@
                                     <?php if($value['isEmail'] == 1) :?>
                                       <em class="m-l fa fa-envelope"></em>
                                     <?php endif; ?>
+                                    <?php if($_SESSION['USER_ID'] == 30 || $_SESSION['USER_ID'] == 1){ ?>
                                     <button data-toggle="modal" data-target="#myModal2<?php echo $value['id']?>" class="btn btn-danger btn-info"><?php echo 'Eliminar';?></button>
+                                    <?php } ?>
                                         <div class="modal inmodal" id="myModal2<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
                                           <div class="modal-dialog">
                                           <div class="modal-content animated bounceInRight">
