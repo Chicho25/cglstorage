@@ -14,7 +14,8 @@
           header("Location: index.php");
           exit;
      }
-    $whreQte = "where (1=1)";
+    $whreQte = "where
+    package.id_master_pay in(0) ";
     $company = "";
       // $name = "";
       // if(isset($_POST['cname']) && $_POST['cname'] != "")
@@ -25,7 +26,7 @@
 
 
       //$where.=" and  quote.stat =  2";
-      $whreRcpt = "";
+      $whreRcpt = " where (1=1)";
 
       if (isset($stat) && $stat != '') {
         $whreQte.= " and package.stat = '".$stat."'";
@@ -53,26 +54,53 @@
           $whreQte.= " and customer.id = '".$customer."'";
         }
       $cost_provider = GetRecords("SELECT cost FROM provider_cost");
-      $arrUser = GetRecords("select
-                              quote.id,
-                              quote.date as fecha,
-                              quote.othervalue,
-                              customer.name as nombre_cliente,
+      $arrUser = GetRecords("(select
+                                quote.id,
+                                quote.date as fecha,
+                                quote.othervalue,
+                                customer.name as nombre_cliente,
+                                quote_detail.id_package,
+                                quote_detail.price,
+                                package.trackingno as codigo,
+                                package.totaltopay as total_pagar,
+                                (quote.othervalue + quote_detail.price) as total_cobrar,
+                                package.stat,
+                                (package.weighttocollect * '".$cost_provider[0]['cost']."') as cost_house,
+                                pay_datail_invoice.id_method,
+                                pay_datail_invoice.descriptions,
+                                pay_datail_invoice.attched,
+                                1 as tipo
+                                from quote inner join customer on quote.id_customer = customer.id
+                              			 inner join quote_detail on quote_detail.id_quote = quote.id
+                              			 inner join package on package.id = quote_detail.id_package
+                              			 left join pay_datail_invoice on pay_datail_invoice.id_invoice = quote.id
+                                $whreQte
+                              )
+                              union
+                              (select
+                              master_pay.id,
+                              master_pay.fecha,
+                              '' as othervalue,
+                              (select customer.name from customer where quote.id_customer = customer.id) as nombre_cliente,
                               quote_detail.id_package,
                               quote_detail.price,
-                              package.trackingno as codigo,
-                              package.totaltopay as total_pagar,
-                              (quote.othervalue + quote_detail.price) as total_cobrar,
+                              'varios' as codigo,
+                              sum(package.totaltopay) as total_pagar,
+                              sum(quote_detail.price) as total_cobrar,
                               package.stat,
-                              (package.weighttocollect * '".$cost_provider[0]['cost']."') as cost_house, 
-                              pay_datail_invoice.id_method, 
-                              pay_datail_invoice.descriptions, 
-                              pay_datail_invoice.attched
-                              from quote inner join customer on quote.id_customer = customer.id
-                                    inner join quote_detail on quote_detail.id_quote = quote.id
-                                    inner join package on package.id = quote_detail.id_package
-                                    left join pay_datail_invoice on pay_datail_invoice.id_invoice = quote.id
-                                    $whreQte");
+                              sum((package.weighttocollect * '".$cost_provider[0]['cost']."')) as cost_house,
+                              '' as id_method,
+                              '' as descriptions,
+                              '' as attched,
+                              2 as tipo
+                              from package inner join master_pay on package.id_master_pay = master_pay.id
+                              			 inner join quote_detail on quote_detail.id_package = package.id
+                                     inner join pay_datail_invoice on pay_datail_invoice.id_invoice = quote_detail.id_quote
+                                     inner join quote on quote.id = quote_detail.id_quote
+                              group by
+                              master_pay.id,
+                              master_pay.fecha,
+                              package.stat)");
 
 ?>
      <?php
@@ -215,7 +243,7 @@
                                                             </form>
                                                         </div>
                                                       </div>
-                                                    </div> 
+                                                    </div>
                                 </td>
                                 <?php $cobrar += $value['total_cobrar']; ?>
                                 <?php $pagar += $value['cost_house']; ?>

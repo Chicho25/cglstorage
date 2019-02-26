@@ -17,18 +17,27 @@
 
     if(isset($_POST['select_pay'])){
 
+      // master pay
+
+      $master_pay = array("stat" => 1);
+      $id_master_pay = InsertRec("master_pay", $master_pay);
+
       foreach ($_POST['fact'] as $key => $value) {
         if($value!=0){
-          UpdateRec("quote", "id = ".$value, array("stat" => 2));
+          UpdateRec("quote", "id = ".$value, array("stat" => 2,
+                                                   "id_master_pay" => $id_master_pay));
+
           UpdateRec("package", "id in (select id_package from quote_detail
-                    where id_quote = ".$value.") ", array("stat" => 3));
+                    where id_quote = ".$value.") ", array("stat" => 3,
+                                                          "id_master_pay" => $id_master_pay));
 
         $array_detail = array("id_invoice" => $value,
                               "id_method" => $_POST['method'],
                               "descriptions" => $_POST['descriptions'],
                               "id_user" => $_SESSION['USER_ID'],
                               "date_time" => date("Y-m-d H:i:s"),
-                              "stat" => 1);
+                              "stat" => 1,
+                              "id_master_pay" => $id_master_pay);
 
         $id_pay_detail = InsertRec("pay_datail_invoice",$array_detail);
 
@@ -136,7 +145,15 @@
                               <div class="panel-body">
                                 <dl class="dl-horizontal">
                                   <dt>Nombre</dt>
-                                  <dd><?php echo $arrUser[0]["CName"]; ?></dd>
+                                  <?php foreach ($arrUser as $key => $value) {
+                                  if(conti($_POST['fact'], $value['id']) != 1){
+                                    continue;
+                                  }
+                                  $customer = $value["CName"];
+                                  break;
+                                  } ?>
+
+                                  <dd><?php echo $customer; ?></dd>
                               </div>
                             </div>
                           </div>
@@ -175,7 +192,8 @@
                               foreach ($arrUser as $key => $value) {
                               if(conti($_POST['fact'], $value['id']) != 1){
                                 continue;
-                              } ?>
+                              }
+                              ?>
                               <tr>
                                 <th class="text-center rowtotal mono"><?php echo $value["pieces"]; ?></th>
                                 <th class="text-center rowtotal mono"><?php echo $value["trackingno"]; ?></th>
@@ -243,6 +261,7 @@
                         <span style="font-size:11px;">-----------------------------------------------------------------------------------------</span>
                       </div>
                     </div>
+                    <div id="camvas"></div>
 
                   <?php  /*  <h3>Cliente:</h3>
                         <div class="row wrapper">
@@ -336,7 +355,7 @@
               html2canvas($("#contenido"), {
                   onrendered: function(canvas) {
                       theCanvas = canvas;
-                      document.body.appendChild(canvas);
+                      document.querySelector("#camvas").appendChild(canvas);
 
                       /*
                       canvas.toBlob(function(blob) {
