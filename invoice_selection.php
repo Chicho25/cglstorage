@@ -21,6 +21,13 @@
 
       $master_pay = array("stat" => 1);
       $id_master_pay = InsertRec("master_pay", $master_pay);
+      // nuemracion de la factura
+
+      $array_num_invo = array("stat" => 1,
+                              "id_invoice" => $id_master_pay,
+                              "tipo" => 2);
+
+      $numero_factura = InsertRec("number_invoice", $array_num_invo);
 
       foreach ($_POST['fact'] as $key => $value) {
         if($value!=0){

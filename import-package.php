@@ -8,6 +8,16 @@
     include("include/defs.php");
     $loggdUType = current_user_type();
 
+    function comprobar($numero_track){
+        $comprbar = GetRecords("SELECT count(*) as contar, trackingno FROM package WHERE trackingno ='".$numero_track."'");
+        foreach ($comprbar as $key => $value) {
+          $contar = $value['contar'];
+          $n_track = $value['trackingno'];
+
+          return $track = array("contar" => $contar, "n_track" => $n_track);
+        }
+    }
+
 
     include("header.php");
 
@@ -20,12 +30,38 @@
      $getCompanyInfo = GetRecord("company", "id = ".$_SESSION['USER_COMPANY']);
      $message="";
 
-    $message="";
-     $dataImported=array();
+    //$message="";
+    // $dataImported=array();
 
      if(isset($_POST['n_invoice']) && $_POST['n_invoice'] != "")
      {
         //$pathInfo = pathInfo($_FILES['myFile']['name']);
+
+        if (isset($_POST['n_traking'])) {
+            $comprobar = 0;
+        $cadena = $_POST['n_traking'];
+        $explodiado = explode(" ", $cadena);
+        $i = 0;
+        foreach ($explodiado as $key => $value) {
+              $array_validar = comprobar($value);
+              if ($array_validar['contar'] != 0) {
+                  $comprobar = 1;
+                  $numero_track = $array_validar['n_track'];
+                  break;
+
+              }
+          }
+        }
+        if ($comprobar == 1) {
+          $message = '<div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Este tracking ya se encuentra en la base de datos '.$numero_track.'</strong>
+                      </div>';
+        }else{
+
+
+
+        //$array_validar = comprobar($numero_track);
 
         $import_cvs = array("name" => $_POST['n_invoice'],
                             "date" => date("Y-m-d"),
@@ -126,6 +162,7 @@
                     <strong>Only CSV File extention allowed</strong>
                   </div>';
         }*/
+      }
 
      }
 ?>

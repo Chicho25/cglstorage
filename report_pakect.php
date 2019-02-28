@@ -30,12 +30,14 @@
 
       if (isset($stat) && $stat != '') {
         $whreQte.= " and package.stat = '".$stat."'";
+        $whreRcpt.= " and package.stat = '".$stat."'";
       }
 
 
       if(isset($datefrom) && $datefrom != "")
       {
         $whreQte.= " and quote.date >= '".$datefrom."'";
+        $whreRcpt.= " and quote.date >= '".$datefrom."'";
         $crtDatFrom =  $datefrom;
       }
       else
@@ -43,6 +45,7 @@
       if(isset($dateto) && $dateto != "")
       {
         $whreQte.= " and quote.date <= '".$dateto.' 23:59:59'."'";
+        $whreRcpt.= " and quote.date <= '".$dateto.' 23:59:59'."'";
         $crtDatTo = $dateto;
       }
       else
@@ -52,6 +55,7 @@
         if(isset($customer) && $customer != "")
         {
           $whreQte.= " and customer.id = '".$customer."'";
+          $whreRcpt.= " and quote.id_customer = '".$customer."'";
         }
       $cost_provider = GetRecords("SELECT cost FROM provider_cost");
       $arrUser = GetRecords("(select
@@ -97,6 +101,7 @@
                               			 inner join quote_detail on quote_detail.id_package = package.id
                                      inner join pay_datail_invoice on pay_datail_invoice.id_invoice = quote_detail.id_quote
                                      inner join quote on quote.id = quote_detail.id_quote
+                              $whreRcpt
                               group by
                               master_pay.id,
                               master_pay.fecha,
@@ -199,6 +204,11 @@
                                 <td class="tbdata"> <?php echo number_format($value['total_cobrar'],2).' $';?> </td>
                                 <td class="tbdata"> <?php echo number_format($value['total_cobrar']-$value['cost_house'],2).' $';?> </td>
                                 <td class="tbdata"> <a data-toggle="modal" data-target="#myModal3<?php echo $value['id']?>" class="btn btn-success btn-info"><?php echo 'Ver';?></a>
+                                                    <?php if($value['tipo'] == 1){ ?>
+                                                    <a href="factura_final_unica.php?id=<?php echo $value['id']?>" target="_blank" class="btn btn-success btn-info"><?php echo 'Factura';?></a>
+                                                    <?php }else{ ?>
+                                                    <a href="factura_final.php?id=<?php echo $value['id']?>" target="_blank" class="btn btn-success btn-info"><?php echo 'Factura';?></a>
+                                                    <?php } ?>
                                                     <div class="modal inmodal" id="myModal3<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-hidden="true">
                                                        <div class="modal-dialog">
                                                           <div class="modal-content animated bounceInRight">

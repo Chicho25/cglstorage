@@ -55,6 +55,14 @@
                                         where
                                         id_quote = ".$_POST['id_invoice'].") ", array("stat" => 3));
 
+          // nuemracion de la factura
+
+          $array_num_invo = array("stat" => 1,
+                                  "id_invoice" => $_POST['id_invoice'],
+                                  "tipo" => 1);
+
+          $numero_factura = InsertRec("number_invoice", $array_num_invo);
+
     }
 
     if(!isset($_SESSION['USER_ID']))
