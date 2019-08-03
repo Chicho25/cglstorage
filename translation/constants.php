@@ -47,7 +47,7 @@
 	define("Register_Quote", "Registrar Facturación");
 	define("Quote_List", "Lista de Facturación");
 	define("Receipt", "Recibos");
-	define("Register_Receipt", "Registrar Receibos");
+	define("Register_Receipt", "Registrar Recibos");
 	define("Receipt_List", "Lista de Recibos");
 	define("Report", "Reportes");
 	define("Statement_Account", "Estado de Cuenta");
